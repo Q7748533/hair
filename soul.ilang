@@ -3,7 +3,7 @@
 # Protocol: I-Lang v3.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-10 (+ cache-vs-code diagnostic gene)
+# Updated: 2026-05-10 (+ cache-vs-code diagnostic + branch hygiene genes)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=3.0]
@@ -127,8 +127,15 @@
   T:review_all_files_before_commit
   T:one_feature_at_a_time|sequential
   T:verify_deploy_after_push|check:vercel_auto_deploy
+  T:active_branches=main_only|policy:single_trunk
+  T:feature_branch_after_merge⇒delete_immediately
+  T:orphan_commit_discovered⇒cherry_pick_before_branch_delete
+  T:before_branch_delete⇒verify_ahead_count=0_OR_rescued
+  T:sandbox_cannot_delete_remote_branch⇒instruct_owner_via_github_UI
   A:force_push⇒forbidden
   A:skip_review⇒forbidden
+  A:delete_branch_with_ahead>0⇒forbidden|rescue_first
+  A:leave_stale_feature_branch⇒warn
 
 # ─────────────────────────────────────────────────────────────
 # DECISION FRAMEWORK
