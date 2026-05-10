@@ -9,7 +9,12 @@
     <meta name="theme-color" content="#e8527a">
     <link rel="canonical" href="https://hairtoolslab.com/wavytalk-pro-steam-straightener-review">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.min.css">
+    <!-- Perf: preload LCP hero image (fires in parallel with HTML parse) -->
+    <link rel="preload" as="image" href="https://m.media-amazon.com/images/I/71ywz3xycWL._SL1500_.jpg" fetchpriority="high">
+    <!-- Perf: warm up Amazon CDN connection while HTML parses -->
+    <link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
+    <link rel="dns-prefetch" href="https://m.media-amazon.com">
     <meta property="og:title" content="Wavytalk Pro Steam Straightener Review 2026: 4.5&#9733; (4,277 Reviews)">
     <meta property="og:description" content="Steam technology for 101% shinier, 77% smoother hair with 62% less frizz. See real results, specs, and honest pros &amp; cons.">
     <meta property="og:type" content="article">
@@ -125,7 +130,7 @@
       ]
     }
     </script>
-<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -150,8 +155,28 @@
   } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-HFT4XZ2YB2');
+  // Defer the 70KB gtag.js library until the browser is idle OR the user
+  // actually does something. Saves TTI / initial bandwidth on the first load.
+  (function(){
+    var loaded = false;
+    function loadGA(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2';
+      document.head.appendChild(s);
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA, {timeout: 4000});
+    } else {
+      setTimeout(loadGA, 3000);
+    }
+    ['scroll','click','keydown','touchstart','mousemove'].forEach(function(ev){
+      window.addEventListener(ev, loadGA, {once:true, passive:true});
+    });
+  })();
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
 </head>
 <body>
 
@@ -196,7 +221,7 @@
             <div class="hero-image">
                 <img src="https://m.media-amazon.com/images/I/71ywz3xycWL._SL1500_.jpg"
                      alt="Wavytalk Pro Steamline 3-in-1 Hair Straightener Brush in Pink with accessories - heat glove, clips, cleaning brush, scrunchie"
-                     width="420" height="420" loading="eager">
+                     width="420" height="420" loading="eager" fetchpriority="high" decoding="async">
             </div>
             <div class="hero-content">
                 <div class="hero-badge">&#127942; Amazon's Choice</div>

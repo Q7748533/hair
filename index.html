@@ -9,7 +9,10 @@
     <meta name="theme-color" content="#e8527a">
     <link rel="canonical" href="https://hairtoolslab.com/">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.min.css">
+    <!-- Perf: warm up Amazon CDN connection while HTML parses -->
+    <link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
+    <link rel="dns-prefetch" href="https://m.media-amazon.com">
     <meta property="og:title" content="HairToolsReview — We Test Hair Tools So You Don't Have To">
     <meta property="og:description" content="Real reviews of hair straighteners, steam brushes, and styling tools. No fluff, no sponsors.">
     <meta property="og:type" content="website">
@@ -138,7 +141,7 @@
             .review-preview-card { flex-direction: column; align-items: flex-start; }
         }
     </style>
-<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -163,8 +166,28 @@
   } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-HFT4XZ2YB2');
+  // Defer the 70KB gtag.js library until the browser is idle OR the user
+  // actually does something. Saves TTI / initial bandwidth on the first load.
+  (function(){
+    var loaded = false;
+    function loadGA(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2';
+      document.head.appendChild(s);
+    }
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGA, {timeout: 4000});
+    } else {
+      setTimeout(loadGA, 3000);
+    }
+    ['scroll','click','keydown','touchstart','mousemove'].forEach(function(ev){
+      window.addEventListener(ev, loadGA, {once:true, passive:true});
+    });
+  })();
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
 </head>
 <body>
 
