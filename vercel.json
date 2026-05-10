@@ -9,9 +9,9 @@
       ]
     },
     {
-      "source": "/(.*).html",
+      "source": "/(.*)\\.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400, must-revalidate" }
       ]
     },
     {
@@ -31,11 +31,6 @@
     { "source": "/", "destination": "/index.html" }
   ],
   "redirects": [
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "statusCode": 301
-    },
     {
       "source": "/landing",
       "destination": "/wavytalk-pro-steam-straightener-review",
