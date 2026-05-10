@@ -10,9 +10,6 @@
     <link rel="canonical" href="https://hairtoolslab.com/404">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="assets/styles.min.css">
-    <!-- Perf: warm up Amazon CDN connection while HTML parses -->
-    <link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
-    <link rel="dns-prefetch" href="https://m.media-amazon.com">
     <meta property="og:title" content="Page Not Found | HairToolsReview">
     <meta property="og:description" content="The page you're looking for doesn't exist.">
     <meta property="og:type" content="website">
@@ -75,6 +72,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="/">Hair<span>Tools</span>Review</a></div>
@@ -94,6 +93,8 @@
     <a href="/">Home</a>
     <a href="steam-straighteners">Steam Straighteners</a>
     <a href="hair-dryers">Hair Dryers</a>
+    <a href="best-ionic-hair-dryers-2026">Top 5 Hair Dryers</a>
+    <a href="how-to-use-a-diffuser">How to Use a Diffuser</a>
     <a href="best-steam-straighteners-2026">Top 5 Steam Straighteners</a>
     <a href="how-to-use-steam-straightener">How-to Guide</a>
     <a href="steam-straightener-vs-flat-iron">Steam vs Flat Iron</a>
@@ -103,23 +104,23 @@
 
 <div class="container">
 
-<main>
-    <section class="section" style="text-align:center; padding:60px 40px;">
-        <p style="font-size:64px; font-weight:700; color:#e8527a; margin-bottom:8px; line-height:1;">404</p>
-        <h1 style="font-size:28px; margin-bottom:16px;">We couldn't find that page</h1>
-        <p style="font-size:16px; color:#555; max-width:520px; margin:0 auto 32px;">
+<main id="main">
+    <section class="section error-section">
+        <p class="error-code">404</p>
+        <h1 class="error-title">We couldn't find that page</h1>
+        <p class="error-message">
             The link may be broken, or the page may have moved. Here's where to go next:
         </p>
 
-        <div style="display:grid; grid-template-columns:1fr; gap:12px; max-width:520px; margin:0 auto 24px;">
-            <a href="/" style="display:block; background:#fdf2f5; color:#c2185b; padding:16px 20px; border-radius:10px; text-decoration:none; font-weight:600; transition:background 0.2s;">&rarr; Homepage</a>
-            <a href="steam-straighteners" style="display:block; background:#fafafa; color:#1a1a1a; padding:16px 20px; border-radius:10px; text-decoration:none; border:1px solid #f0f0f0;">Steam Straighteners</a>
-            <a href="hair-dryers" style="display:block; background:#fafafa; color:#1a1a1a; padding:16px 20px; border-radius:10px; text-decoration:none; border:1px solid #f0f0f0;">Hair Dryers</a>
-            <a href="best-steam-straighteners-2026" style="display:block; background:#fafafa; color:#1a1a1a; padding:16px 20px; border-radius:10px; text-decoration:none; border:1px solid #f0f0f0;">Top 5 Steam Straighteners 2026</a>
+        <div class="error-links">
+            <a href="/" class="error-link error-link--primary">&rarr; Homepage</a>
+            <a href="steam-straighteners" class="error-link error-link--secondary">Steam Straighteners</a>
+            <a href="hair-dryers" class="error-link error-link--secondary">Hair Dryers</a>
+            <a href="best-steam-straighteners-2026" class="error-link error-link--secondary">Top 5 Steam Straighteners 2026</a>
         </div>
 
-        <p style="font-size:13px; color:#777; margin-top:20px;">
-            Still can't find what you need? <a href="contact" style="color:#e8527a;">Let us know</a>.
+        <p class="error-footer">
+            Still can't find what you need? <a href="contact">Let us know</a>.
         </p>
     </section>
 </main>

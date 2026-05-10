@@ -10,9 +10,6 @@
     <link rel="canonical" href="https://hairtoolslab.com/contact">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="assets/styles.min.css">
-    <!-- Perf: warm up Amazon CDN connection while HTML parses -->
-    <link rel="preconnect" href="https://m.media-amazon.com" crossorigin>
-    <link rel="dns-prefetch" href="https://m.media-amazon.com">
     <meta property="og:title" content="Contact HairToolsReview | Questions &amp; Feedback">
     <meta property="og:description" content="Get in touch for product inquiries, corrections, or partnership. Response within 24 hours.">
     <meta property="og:type" content="website">
@@ -75,6 +72,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="/">Hair<span>Tools</span>Review</a></div>
@@ -94,6 +93,8 @@
     <a href="/">Home</a>
     <a href="steam-straighteners">Steam Straighteners</a>
     <a href="hair-dryers">Hair Dryers</a>
+    <a href="best-ionic-hair-dryers-2026">Top 5 Hair Dryers</a>
+    <a href="how-to-use-a-diffuser">How to Use a Diffuser</a>
     <a href="best-steam-straighteners-2026">Top 5 Steam Straighteners</a>
     <a href="how-to-use-steam-straightener">How-to Guide</a>
     <a href="steam-straightener-vs-flat-iron">Steam vs Flat Iron</a>
@@ -103,7 +104,7 @@
 
 <div class="container">
 
-<main>
+<main id="main">
     <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> &rsaquo; <span>Contact Us</span>
     </nav>
@@ -128,22 +129,28 @@
         </div>
 
         <h2>Send Us a Message</h2>
-        <p>Use the form below to get in touch. Your email client will open with the details pre-filled &mdash; or email us directly at <a href="mailto:support@hairtoolslab.com" style="color:#e8527a;">support@hairtoolslab.com</a>.</p>
+        <p>Use the form below to send us a message. We aim to respond within 24 hours. You can also email us directly at <a href="mailto:support@hairtoolslab.com" style="color:#e8527a;">support@hairtoolslab.com</a>.</p>
 
         <div class="contact-form">
-            <!-- Mailto form: works without a backend. For production, swap action to Formspree / Cloudflare Forms. -->
-            <form action="mailto:support@hairtoolslab.com" method="post" enctype="text/plain">
+            <!--
+                To enable reliable async submission (recommended):
+                1. Sign up free at https://formspree.io (50 submissions/month)
+                2. Create a new form for support@hairtoolslab.com
+                3. Replace data-formspree-id="" below with your form hash, e.g. data-formspree-id="xpwzjlgk"
+                Until then, the form uses mailto: as a no-JS fallback.
+            -->
+            <form id="contact-form" action="mailto:support@hairtoolslab.com" method="post" enctype="text/plain" data-formspree-id="" novalidate>
                 <div class="form-group">
                     <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="Email" placeholder="Enter your email address" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <select id="subject" name="Subject">
+                    <select id="subject" name="subject">
                         <option value="">Select a topic...</option>
                         <option value="General Inquiry">General Inquiry</option>
                         <option value="Product Question">Product Question</option>
@@ -155,9 +162,15 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Your Message *</label>
-                    <textarea id="message" name="Message" placeholder="Tell us how we can help..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <!-- Honeypot: real users won't fill this; bots often will -->
+                <div style="position:absolute; left:-9999px;" aria-hidden="true">
+                    <label for="website">Website (leave blank)</label>
+                    <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+                <button type="submit" class="submit-btn" id="contact-submit">Send Message</button>
+                <div id="contact-status" role="status" aria-live="polite" style="margin-top:14px; font-size:14px;"></div>
                 <p class="form-note">By submitting this form, you agree to our <a href="privacy-policy" style="color:#e8527a;">Privacy Policy</a> and <a href="terms" style="color:#e8527a;">Terms of Service</a>.</p>
             </form>
         </div>
@@ -272,6 +285,64 @@
   if (mobileNav) {
     mobileNav.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+    });
+  }
+
+  // ----- Contact form: progressive enhancement -----
+  // If the form has a data-formspree-id attribute, submit asynchronously to Formspree.
+  // Otherwise, fall back to the native mailto: action.
+  var form = document.getElementById('contact-form');
+  if (form) {
+    var status = document.getElementById('contact-status');
+    var submitBtn = document.getElementById('contact-submit');
+    var formspreeId = form.getAttribute('data-formspree-id');
+
+    form.addEventListener('submit', function(e){
+      // If the honeypot field is filled, silently drop (treat as sent)
+      var honeypot = form.querySelector('input[name="_gotcha"]');
+      if (honeypot && honeypot.value) {
+        e.preventDefault();
+        status.textContent = 'Thanks — your message has been sent.';
+        status.style.color = '#2e7d32';
+        form.reset();
+        return;
+      }
+
+      if (!formspreeId) {
+        // No Formspree configured — let the browser handle mailto: natively.
+        return;
+      }
+
+      e.preventDefault();
+      status.textContent = 'Sending…';
+      status.style.color = '#555';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/' + formspreeId, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      }).then(function(response){
+        if (response.ok) {
+          status.textContent = 'Thanks — your message has been sent. We usually reply within 24 hours.';
+          status.style.color = '#2e7d32';
+          form.reset();
+        } else {
+          return response.json().then(function(body){
+            var msg = (body && body.errors && body.errors.map(function(x){return x.message;}).join(', ')) || 'Something went wrong. Please email us directly at support@hairtoolslab.com.';
+            status.textContent = msg;
+            status.style.color = '#c62828';
+          });
+        }
+      }).catch(function(){
+        status.textContent = 'Network error. Please email us directly at support@hairtoolslab.com.';
+        status.style.color = '#c62828';
+      }).then(function(){
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      });
     });
   }
 })();

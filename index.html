@@ -39,108 +39,6 @@
       }
     }
     </script>
-    <style>
-        .home-hero {
-            background: #fff;
-            border-radius: 12px;
-            padding: 48px 40px;
-            margin: 20px 0 28px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .home-hero h1 {
-            font-size: 28px;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-        .home-hero .intro {
-            font-size: 16px;
-            color: #444;
-            max-width: 640px;
-            margin-bottom: 24px;
-            line-height: 1.8;
-        }
-        .home-hero .intro strong { color: #1a1a1a; }
-        .latest-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #e8527a;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-        .review-preview {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .review-preview-card {
-            background: #fafafa;
-            border: 1px solid #f0f0f0;
-            border-radius: 10px;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            transition: border-color 0.2s;
-        }
-        .review-preview-card:hover { border-color: #e8527a; }
-        .review-preview-card .info h3 {
-            font-size: 16px;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-        .review-preview-card .info h3 a {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-        .review-preview-card .info h3 a:hover { color: #e8527a; }
-        .review-preview-card .info .meta {
-            font-size: 13px;
-            color: #777;
-        }
-        .review-preview-card .info .meta .stars { color: #f5a623; font-size: 13px; }
-        .review-preview-card .action {
-            font-size: 13px;
-            font-weight: 600;
-            color: #e8527a;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .quick-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-        }
-        .quick-links a {
-            background: #fdf2f5;
-            color: #c2185b;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .quick-links a:hover { background: #fce4ec; }
-        .home-note {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px 24px;
-            margin: 24px 0;
-            font-size: 14px;
-            color: #555;
-            border-left: 3px solid #e8527a;
-        }
-        @media (max-width: 768px) {
-            .home-hero { padding: 32px 20px; }
-            .home-hero h1 { font-size: 22px; }
-            .review-preview-card { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
 <!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -191,6 +89,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="/">Hair<span>Tools</span>Review</a></div>
@@ -210,6 +110,8 @@
     <a href="/">Home</a>
     <a href="steam-straighteners">Steam Straighteners</a>
     <a href="hair-dryers">Hair Dryers</a>
+    <a href="best-ionic-hair-dryers-2026">Top 5 Hair Dryers</a>
+    <a href="how-to-use-a-diffuser">How to Use a Diffuser</a>
     <a href="best-steam-straighteners-2026">Top 5 Steam Straighteners</a>
     <a href="how-to-use-steam-straightener">How-to Guide</a>
     <a href="steam-straightener-vs-flat-iron">Steam vs Flat Iron</a>
@@ -219,30 +121,30 @@
 
 <div class="container">
 
-<main>
+<main id="main">
     <section class="home-hero">
         <h1>We test hair tools so you don't waste money on the wrong one.</h1>
         <p class="intro">
-            Tired of reading reviews that all say the same thing? Us too. We dig through thousands of real buyer feedback, compare specs side-by-side, and tell you <strong>what actually works</strong> — and what doesn't. No brand sent us free stuff. We just really care about hair.
+            Tired of reading reviews that all say the same thing? Us too. We dig through thousands of real buyer feedback, compare specs side-by-side, and tell you <strong>what actually works</strong> &mdash; and what doesn't. No brand sent us free stuff. We just really care about hair.
         </p>
 
         <div class="latest-label">Latest Reviews</div>
 
-        <div class="review-preview">
-            <div class="review-preview-card">
-                <div class="info">
-                    <h3><a href="wavytalk-pro-steam-straightener-review">Wavytalk Pro Steamline 3-in-1</a></h3>
-                    <div class="meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.5 &middot; 4,277 reviews &middot; ~$67</div>
+        <div class="link-card-grid">
+            <a href="wavytalk-pro-steam-straightener-review" class="link-card">
+                <div>
+                    <span class="link-card-title">Wavytalk Pro Steamline 3-in-1</span>
+                    <div class="link-card-meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.5 &middot; 4,277 reviews &middot; ~$67</div>
                 </div>
-                <a href="wavytalk-pro-steam-straightener-review" class="action">Read review &rarr;</a>
-            </div>
-            <div class="review-preview-card">
-                <div class="info">
-                    <h3><a href="wavytalk-ionic-hair-dryer-review">Wavytalk Blown Away Ionic Hair Dryer</a></h3>
-                    <div class="meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.4 &middot; 24,197 reviews &middot; $33.21</div>
+                <span class="link-card-action">Read review &rarr;</span>
+            </a>
+            <a href="wavytalk-ionic-hair-dryer-review" class="link-card">
+                <div>
+                    <span class="link-card-title">Wavytalk Blown Away Ionic Hair Dryer</span>
+                    <div class="link-card-meta"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> 4.4 &middot; 24,197 reviews &middot; $33.21</div>
                 </div>
-                <a href="wavytalk-ionic-hair-dryer-review" class="action">Read review &rarr;</a>
-            </div>
+                <span class="link-card-action">Read review &rarr;</span>
+            </a>
         </div>
 
         <div class="quick-links">
@@ -254,7 +156,7 @@
     </section>
 
     <div class="home-note">
-        <strong>How we work:</strong> We analyze verified customer reviews (not press releases), compare real specs, and call out both the good and the bad. We earn a small commission if you buy through our links — but that never changes what we write. <a href="about" style="color:#e8527a;">More about us &rarr;</a>
+        <strong>How we work:</strong> We analyze verified customer reviews (not press releases), compare real specs, and call out both the good and the bad. We earn a small commission if you buy through our links &mdash; but that never changes what we write. <a href="about" style="color:#e8527a;">More about us &rarr;</a>
     </div>
 
     <div class="disclosure" style="margin-top:20px;">
