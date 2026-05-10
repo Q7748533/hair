@@ -118,43 +118,60 @@
       ]
     }
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Default: deny tracking until the user consents (GDPR / ePrivacy compliant)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  // If the user already consented on a previous visit, grant immediately
+  try {
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-HFT4XZ2YB2');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
 </head>
 <body>
-
-<div class="top-bar">
-    &#9889; Free Shipping Available &middot; Check Latest Price on Amazon &middot; Offers subject to change
-</div>
 
 <header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="index.html">Hair<span>Tools</span>Review</a></div>
         <nav class="header-nav" aria-label="Primary">
-            <a href="#features">Features</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#specs">Specs</a>
-            <a href="#faq">FAQ</a>
+            <a href="index.html">Home</a>
+            <a href="steam-straighteners.html">Straighteners</a>
+            <a href="hair-dryers.html">Hair Dryers</a>
+            <a href="best-steam-straighteners-2026.html">Top Picks</a>
             <a href="about.html">About</a>
         </nav>
-        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false')">
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="var m=document.getElementById('mobile-nav');var o=m.classList.toggle('open');this.setAttribute('aria-expanded', o?'true':'false');">
             <span></span><span></span><span></span>
         </button>
     </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <a href="#features">Features</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#specs">Specs</a>
-    <a href="#faq">FAQ</a>
+    <a href="index.html">Home</a>
+    <a href="steam-straighteners.html">Steam Straighteners</a>
+    <a href="hair-dryers.html">Hair Dryers</a>
+    <a href="best-steam-straighteners-2026.html">Top 5 Steam Straighteners</a>
+    <a href="how-to-use-steam-straightener.html">How-to Guide</a>
+    <a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a>
     <a href="about.html">About</a>
-    <a href="https://www.amazon.com/dp/B0DCK8P752?maas=maas_adg_api_586768255379496584_static_12_201&ref_=aa_maas&tag=maas&aa_campaignid=PBc6e7e40d8676c25865d53f685ba36915&aa_adgroupid=8c41ZjJi2bJ8XvOZrZkopES4PmcZ_afF65Rv7Rfb4_abTkHSa0j7luF_bCUXIhjlicB3J_b0bdo147wlctJIQ8i_aqhEPtDmB&aa_creativeid=2702YVx5lGKSlZbe9gQeM1bZhgKtH_bP1kUGlAfUdThixc9g_c" rel="nofollow sponsored noopener" target="_blank" style="color:#ff6f00;font-weight:600;">Check Price on Amazon &rarr;</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
@@ -475,101 +492,97 @@
     <div class="footer-inner">
         <div>
             <h4>HairToolsReview</h4>
-            <p>Independent reviews and comparisons of the latest hair styling tools. We help you find the right tool for your hair type and budget.</p>
+            <p>Independent reviews of hair styling tools. Real opinions. No sponsors.</p>
+            <p class="small" style="margin-top:8px; color:#888;">Operated by Palm Media Technology, United States.</p>
         </div>
         <div>
-            <h4>Quick Links</h4>
-            <p><a href="about.html">About Us</a></p>
+            <h4>Categories</h4>
+            <p><a href="steam-straighteners.html">Steam Straighteners</a></p>
+            <p><a href="hair-dryers.html">Hair Dryers</a></p>
+            <p><a href="best-steam-straighteners-2026.html">Top 5 Picks</a></p>
+            <p><a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a></p>
+            <p><a href="how-to-use-steam-straightener.html">How-to Guide</a></p>
+        </div>
+        <div>
+            <h4>Info</h4>
+            <p><a href="about.html">About</a></p>
             <p><a href="contact.html">Contact</a></p>
             <p><a href="privacy-policy.html">Privacy Policy</a></p>
             <p><a href="terms.html">Terms of Service</a></p>
-        </div>
-        <div>
-            <h4>Contact</h4>
-            <p>Email: support@hairtoolslab.com</p>
-            <p>Response time: within 24 hours</p>
-            <p class="small" style="margin-top:8px; color:#888;">For product-specific inquiries, please contact the manufacturer directly.</p>
+            <p style="margin-top:8px;">Email: <a href="mailto:support@hairtoolslab.com">support@hairtoolslab.com</a></p>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 HairToolsReview. All rights reserved. Operated by Palm Media Technology, United States.</span>
+        <span>&copy; 2026 HairToolsReview. All rights reserved.</span>
         <span class="footer-legal">Not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers. All trademarks are property of their respective owners.</span>
-        <span class="footer-legal">Product specifications, prices, and availability subject to change. Always verify on the retailer's website.</span>
+        <span class="footer-legal">Product specifications, prices, and availability are subject to change without notice.</span>
     </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div class="cookie-banner" id="cookie-banner">
-    <p>We use cookies for analytics and affiliate tracking to improve your experience. By continuing to browse, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-    <button class="cookie-btn" onclick="acceptCookies()">Accept All</button>
-    <button class="cookie-btn cookie-btn--outline" onclick="acceptCookies()">Essential Only</button>
+<!-- Cookie Consent Banner (Consent Mode v2) -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies for analytics and affiliate tracking to improve your experience. You can accept all, or choose essential only. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <button type="button" class="cookie-btn" data-consent="accepted">Accept All</button>
+    <button type="button" class="cookie-btn cookie-btn--outline" data-consent="essential">Essential Only</button>
 </div>
 
 <!-- Back to top -->
-<button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
 
-<!-- Minimal JS: header shadow, back-to-top, stats animation, mobile menu close -->
 <script>
 (function(){
-  // Cookie consent
   var banner = document.getElementById('cookie-banner');
-  if(!localStorage.getItem('cookie_consent')){
+  var btt = document.getElementById('back-to-top');
+  var header = document.getElementById('site-header');
+  var mobileNav = document.getElementById('mobile-nav');
+  var stored = null;
+  try { stored = localStorage.getItem('cookie_consent'); } catch(e) {}
+
+  function setConsent(choice){
+    try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
+    if (typeof gtag === 'function') {
+      var granted = (choice === 'accepted');
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+    if (banner) banner.classList.remove('visible');
+  }
+
+  if (banner && !stored) {
     setTimeout(function(){ banner.classList.add('visible'); }, 800);
   }
-  window.acceptCookies = function(){
-    localStorage.setItem('cookie_consent', 'accepted');
-    banner.classList.remove('visible');
-  };
 
-  // Header scroll shadow
-  var header = document.getElementById('site-header');
-  var btt = document.getElementById('back-to-top');
-  var mobileNav = document.getElementById('mobile-nav');
+  if (banner) {
+    banner.querySelectorAll('[data-consent]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setConsent(btn.getAttribute('data-consent'));
+      });
+    });
+  }
 
   window.addEventListener('scroll', function(){
-    if(window.scrollY > 10) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-    if(window.scrollY > 400) btt.classList.add('visible');
-    else btt.classList.remove('visible');
+    if (header) {
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    if (btt) {
+      if (window.scrollY > 400) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
   }, {passive:true});
 
-  // Back to top click
-  btt.addEventListener('click', function(){
-    window.scrollTo({top:0,behavior:'smooth'});
+  if (btt) btt.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
   });
 
-  // Mobile nav: close on link click
-  mobileNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
-  });
-
-  // Stats count-up animation
-  var animated = false;
-  var statsRow = document.querySelector('.stats-row');
-  if(statsRow){
-    var observer = new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting && !animated){
-        animated = true;
-        statsRow.querySelectorAll('.stat-number').forEach(function(el){
-          var target = parseInt(el.textContent);
-          if(isNaN(target)) return;
-          var start = 0;
-          var duration = 1200;
-          var startTime = null;
-          function step(ts){
-            if(!startTime) startTime = ts;
-            var progress = Math.min((ts - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.round(start + (target - start) * eased) + '%';
-            if(progress < 1) requestAnimationFrame(step);
-          }
-          el.textContent = '0%';
-          requestAnimationFrame(step);
-        });
-        observer.disconnect();
-      }
-    }, {threshold:0.3});
-    observer.observe(statsRow);
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+    });
   }
 })();
 </script>

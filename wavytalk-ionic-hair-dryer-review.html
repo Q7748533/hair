@@ -118,29 +118,61 @@
       ]
     }
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Default: deny tracking until the user consents (GDPR / ePrivacy compliant)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  // If the user already consented on a previous visit, grant immediately
+  try {
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-HFT4XZ2YB2');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2"></script>
 </head>
 <body>
 
-<header class="header">
+<header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="index.html">Hair<span>Tools</span>Review</a></div>
         <nav class="header-nav" aria-label="Primary">
             <a href="index.html">Home</a>
-            <a href="hair-dryers.html">Hair Dryers</a>
             <a href="steam-straighteners.html">Straighteners</a>
-            <a href="#faq">FAQ</a>
+            <a href="hair-dryers.html">Hair Dryers</a>
+            <a href="best-steam-straighteners-2026.html">Top Picks</a>
             <a href="about.html">About</a>
         </nav>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="var m=document.getElementById('mobile-nav');var o=m.classList.toggle('open');this.setAttribute('aria-expanded', o?'true':'false');">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="steam-straighteners.html">Steam Straighteners</a>
+    <a href="hair-dryers.html">Hair Dryers</a>
+    <a href="best-steam-straighteners-2026.html">Top 5 Steam Straighteners</a>
+    <a href="how-to-use-steam-straightener.html">How-to Guide</a>
+    <a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
 <div class="container">
 
@@ -394,36 +426,98 @@
     <div class="footer-inner">
         <div>
             <h4>HairToolsReview</h4>
-            <p>Real reviews. Real opinions. No sponsors.</p>
+            <p>Independent reviews of hair styling tools. Real opinions. No sponsors.</p>
+            <p class="small" style="margin-top:8px; color:#888;">Operated by Palm Media Technology, United States.</p>
         </div>
         <div>
             <h4>Categories</h4>
             <p><a href="steam-straighteners.html">Steam Straighteners</a></p>
             <p><a href="hair-dryers.html">Hair Dryers</a></p>
+            <p><a href="best-steam-straighteners-2026.html">Top 5 Picks</a></p>
+            <p><a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a></p>
+            <p><a href="how-to-use-steam-straightener.html">How-to Guide</a></p>
         </div>
         <div>
             <h4>Info</h4>
             <p><a href="about.html">About</a></p>
             <p><a href="contact.html">Contact</a></p>
-            <p><a href="privacy-policy.html">Privacy</a></p>
-            <p><a href="terms.html">Terms</a></p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+            <p><a href="terms.html">Terms of Service</a></p>
+            <p style="margin-top:8px;">Email: <a href="mailto:support@hairtoolslab.com">support@hairtoolslab.com</a></p>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 HairToolsReview. Operated by Palm Media Technology, United States.</span>
+        <span>&copy; 2026 HairToolsReview. All rights reserved.</span>
+        <span class="footer-legal">Not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers. All trademarks are property of their respective owners.</span>
+        <span class="footer-legal">Product specifications, prices, and availability are subject to change without notice.</span>
     </div>
 </footer>
 
-<!-- Cookie Consent -->
-<div class="cookie-banner" id="cookie-banner">
-    <p>We use cookies for analytics and affiliate tracking. <a href="privacy-policy.html">Privacy Policy</a>.</p>
-    <button class="cookie-btn" onclick="acceptCookies()">Got it</button>
+<!-- Cookie Consent Banner (Consent Mode v2) -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <p>We use cookies for analytics and affiliate tracking to improve your experience. You can accept all, or choose essential only. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <button type="button" class="cookie-btn" data-consent="accepted">Accept All</button>
+    <button type="button" class="cookie-btn cookie-btn--outline" data-consent="essential">Essential Only</button>
 </div>
+
+<!-- Back to top -->
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
+
 <script>
 (function(){
-  var b=document.getElementById('cookie-banner');
-  if(!localStorage.getItem('cookie_consent'))setTimeout(function(){b.classList.add('visible');},800);
-  window.acceptCookies=function(){localStorage.setItem('cookie_consent','accepted');b.classList.remove('visible');};
+  var banner = document.getElementById('cookie-banner');
+  var btt = document.getElementById('back-to-top');
+  var header = document.getElementById('site-header');
+  var mobileNav = document.getElementById('mobile-nav');
+  var stored = null;
+  try { stored = localStorage.getItem('cookie_consent'); } catch(e) {}
+
+  function setConsent(choice){
+    try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
+    if (typeof gtag === 'function') {
+      var granted = (choice === 'accepted');
+      gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+    if (banner) banner.classList.remove('visible');
+  }
+
+  if (banner && !stored) {
+    setTimeout(function(){ banner.classList.add('visible'); }, 800);
+  }
+
+  if (banner) {
+    banner.querySelectorAll('[data-consent]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setConsent(btn.getAttribute('data-consent'));
+      });
+    });
+  }
+
+  window.addEventListener('scroll', function(){
+    if (header) {
+      if (window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    if (btt) {
+      if (window.scrollY > 400) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
+  }, {passive:true});
+
+  if (btt) btt.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+    });
+  }
 })();
 </script>
 
