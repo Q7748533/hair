@@ -6,4 +6,4 @@ Disallow: /offer.txt
 Disallow: /data/
 Disallow: /*.md$
 
-Sitemap: https://hairtoolsreview.com/sitemap.xml
+Sitemap: https://hairtoolslab.com/sitemap.xml
