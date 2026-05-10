@@ -7,236 +7,21 @@
     <meta name="description" content="Contact HairToolsReview for product questions, review requests, corrections, or partnership inquiries. We respond within 24 hours. Real email and contact form.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e8527a">
-    <link rel="canonical" href="https://hairtoolsreview.com/contact">
+    <link rel="canonical" href="https://hairtoolsreview.com/contact.html">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="assets/styles.css">
     <meta property="og:title" content="Contact HairToolsReview | Questions &amp; Feedback">
     <meta property="og:description" content="Get in touch for product inquiries, corrections, or partnership. Response within 24 hours.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hairtoolsreview.com/contact">
+    <meta property="og:url" content="https://hairtoolsreview.com/contact.html">
     <meta name="twitter:card" content="summary">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.7;
-            color: #222;
-            background: #fafafa;
-        }
-        .header {
-            background: #fff;
-            padding: 16px 0;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .site-name { font-size: 20px; font-weight: 700; color: #1a1a1a; }
-        .site-name a { color: #1a1a1a; text-decoration: none; }
-        .site-name span { color: #e8527a; }
-        .header-nav a {
-            color: #555;
-            text-decoration: none;
-            margin-left: 24px;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        .header-nav a:hover { color: #e8527a; }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .breadcrumb {
-            padding: 16px 0 8px;
-            font-size: 13px;
-            color: #999;
-        }
-        .breadcrumb a { color: #999; text-decoration: none; }
-        .breadcrumb a:hover { color: #e8527a; }
-        .breadcrumb span { color: #666; }
-        .section {
-            background: #fff;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 12px 0 28px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .section h1 {
-            font-size: 28px;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-        }
-        .section .subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 28px;
-        }
-        .section h2 {
-            font-size: 20px;
-            color: #333;
-            margin: 28px 0 12px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #fce4ec;
-        }
-        .section p, .section li {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 12px;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
-        }
-        .contact-card {
-            background: #fafafa;
-            border-radius: 10px;
-            padding: 24px;
-            text-align: center;
-            border: 1px solid #f0f0f0;
-        }
-        .contact-card .icon {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-        .contact-card h4 {
-            font-size: 17px;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .contact-card p {
-            font-size: 14px;
-            color: #666;
-        }
-        .contact-card a {
-            color: #e8527a;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .contact-card a:hover { text-decoration: underline; }
-        .contact-form {
-            margin-top: 20px;
-        }
-        .form-group {
-            margin-bottom: 18px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: #444;
-            margin-bottom: 6px;
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 15px;
-            font-family: inherit;
-            color: #333;
-            background: #fff;
-            transition: border-color 0.2s;
-        }
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #e8527a;
-            box-shadow: 0 0 0 3px rgba(232,82,122,0.1);
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-        .submit-btn {
-            background: #e8527a;
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: background 0.25s, transform 0.15s;
-        }
-        .submit-btn:hover {
-            background: #d44068;
-            transform: translateY(-1px);
-        }
-        .form-note {
-            font-size: 12px;
-            color: #999;
-            margin-top: 12px;
-        }
-        .footer {
-            background: #1a1a1a;
-            color: #aaa;
-            padding: 40px 0;
-            margin-top: 20px;
-            font-size: 13px;
-        }
-        .footer-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .footer h4 { color: #fff; font-size: 14px; margin-bottom: 12px; }
-        .footer a { color: #ccc; text-decoration: none; }
-        .footer a:hover { color: #e8527a; }
-        .footer p { margin-bottom: 6px; line-height: 1.6; }
-        .footer-bottom {
-            max-width: 960px;
-            margin: 20px auto 0;
-            padding: 16px 20px 0;
-            border-top: 1px solid #333;
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-        }
-        @media (max-width: 768px) {
-            .header-nav { display: none; }
-            .section { padding: 28px 20px; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .footer-inner { grid-template-columns: 1fr; gap: 20px; }
-        }
-        @media (max-width: 480px) {
-            .section { padding: 20px 14px; }
-            .section h1 { font-size: 22px; }
-            .section h2 { font-size: 18px; }
-            .subtitle { font-size: 14px; }
-        @media (max-width: 480px) {
-            .section { padding: 20px 14px; }
-            .section h1 { font-size: 22px; }
-            .section h2 { font-size: 18px; }
-            .subtitle { font-size: 14px; }
-            .contact-card { padding: 16px; }
-            .form-group input,
-            .form-group textarea,
-            .form-group select { font-size: 16px; }
-            .submit-btn { width: 100%; padding: 16px; }
-        }
-    </style>
 </head>
 <body>
 
 <header class="header">
     <div class="header-inner">
         <div class="site-name"><a href="landing.html">Hair<span>Tools</span>Review</a></div>
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Primary">
             <a href="landing.html">Home</a>
             <a href="about.html">About</a>
         </nav>
@@ -246,57 +31,58 @@
 <div class="container">
 
 <main>
-    <div class="breadcrumb">
-        <a href="landing.html">Home</a> › <span>Contact Us</span>
-    </div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="landing.html">Home</a> &rsaquo; <span>Contact Us</span>
+    </nav>
 
     <section class="section">
         <h1>Contact Us</h1>
-        <p class="subtitle">We'd love to hear from you. Whether you have a question, suggestion, or just want to say hello — reach out and we'll get back to you as soon as we can.</p>
+        <p class="subtitle">We'd love to hear from you. Whether you have a question, suggestion, or just want to say hello &mdash; reach out and we'll get back to you as soon as we can.</p>
 
         <div class="contact-grid">
             <div class="contact-card">
-                <div class="icon">📧</div>
+                <div class="icon" aria-hidden="true">&#128231;</div>
                 <h4>Email Us</h4>
                 <p><a href="mailto:support@hairtoolsreview.com">support@hairtoolsreview.com</a></p>
-                <p style="font-size:12px; color:#999; margin-top:4px;">We respond within 24 hours</p>
+                <p class="small muted">We respond within 24 hours</p>
             </div>
             <div class="contact-card">
-                <div class="icon">⏱️</div>
+                <div class="icon" aria-hidden="true">&#9201;</div>
                 <h4>Response Time</h4>
                 <p>24-48 hours</p>
-                <p style="font-size:12px; color:#999; margin-top:4px;">Monday through Friday</p>
+                <p class="small muted">Monday through Friday</p>
             </div>
         </div>
 
         <h2>Send Us a Message</h2>
-        <p>Use the form below to get in touch. We read every message and will respond as quickly as possible.</p>
+        <p>Use the form below to get in touch. Your email client will open with the details pre-filled &mdash; or email us directly at <a href="mailto:support@hairtoolsreview.com" style="color:#e8527a;">support@hairtoolsreview.com</a>.</p>
 
         <div class="contact-form">
-            <form action="#" method="POST">
+            <!-- Mailto form: works without a backend. For production, swap action to Formspree / Cloudflare Forms. -->
+            <form action="mailto:support@hairtoolsreview.com" method="post" enctype="text/plain">
                 <div class="form-group">
                     <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <input type="text" id="name" name="Name" placeholder="Enter your full name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <input type="email" id="email" name="Email" placeholder="Enter your email address" required>
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <select id="subject" name="subject">
+                    <select id="subject" name="Subject">
                         <option value="">Select a topic...</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="product">Product Question</option>
-                        <option value="review">Review Request</option>
-                        <option value="correction">Correction / Update</option>
-                        <option value="partnership">Partnership / Advertising</option>
-                        <option value="other">Other</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Product Question">Product Question</option>
+                        <option value="Review Request">Review Request</option>
+                        <option value="Correction / Update">Correction / Update</option>
+                        <option value="Partnership / Advertising">Partnership / Advertising</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="message">Your Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                    <textarea id="message" name="Message" placeholder="Tell us how we can help..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
                 <p class="form-note">By submitting this form, you agree to our <a href="privacy-policy.html" style="color:#e8527a;">Privacy Policy</a> and <a href="terms.html" style="color:#e8527a;">Terms of Service</a>.</p>

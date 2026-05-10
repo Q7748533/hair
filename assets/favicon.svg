@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="14" fill="#e8527a"/>
+  <!-- Stylized "H" for HairTools -->
+  <path d="M18 16 L18 48 M18 32 L46 32 M46 16 L46 48"
+        stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Small sparkle -->
+  <circle cx="52" cy="14" r="3" fill="#fff3f6"/>
+</svg>

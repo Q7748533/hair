@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block data/source files from indexing
+Disallow: /offer.txt
+Disallow: /data/
+Disallow: /*.md$
+
+Sitemap: https://hairtoolsreview.com/sitemap.xml
