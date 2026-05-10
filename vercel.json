@@ -35,6 +35,16 @@
       "source": "/index.html",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/landing",
+      "destination": "/wavytalk-pro-steam-straightener-review",
+      "statusCode": 301
+    },
+    {
+      "source": "/landing.html",
+      "destination": "/wavytalk-pro-steam-straightener-review",
+      "statusCode": 301
     }
   ]
 }
