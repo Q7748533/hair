@@ -850,6 +850,67 @@ img { max-width: 100%; height: auto; display: block; }
 
 .footer-legal { display: block; margin-top: 6px; }
 
+/* ---------- Cookie Consent Banner ---------- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    color: #eee;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-banner p {
+    margin: 0;
+    max-width: 700px;
+}
+
+.cookie-banner a {
+    color: #e8527a;
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    background: #e8527a;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.cookie-btn:hover { background: #d44068; }
+
+.cookie-btn--outline {
+    background: transparent;
+    border: 1px solid #888;
+    color: #ddd;
+}
+
+.cookie-btn--outline:hover {
+    background: #333;
+}
+
 /* ---------- Back to Top ---------- */
 .back-to-top {
     position: fixed;

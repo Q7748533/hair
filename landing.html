@@ -66,7 +66,7 @@
 <body>
 
 <div class="top-bar">
-    &#9889; Limited-Time Offer &middot; Free Shipping Available &middot; Check Latest Price on Amazon
+    &#9889; Free Shipping Available &middot; Check Latest Price on Amazon &middot; Offers subject to change
 </div>
 
 <header class="header" id="site-header">
@@ -409,11 +409,18 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 HairToolsReview. All rights reserved.</span>
+        <span>&copy; 2026 HairToolsReview. All rights reserved. Operated by Palm Media Technology, United States.</span>
         <span class="footer-legal">Not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers. All trademarks are property of their respective owners.</span>
         <span class="footer-legal">Product specifications, prices, and availability subject to change. Always verify on the retailer's website.</span>
     </div>
 </footer>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies for analytics and affiliate tracking to improve your experience. By continuing to browse, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept All</button>
+    <button class="cookie-btn cookie-btn--outline" onclick="acceptCookies()">Essential Only</button>
+</div>
 
 <!-- Back to top -->
 <button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
@@ -421,6 +428,16 @@
 <!-- Minimal JS: header shadow, back-to-top, stats animation, mobile menu close -->
 <script>
 (function(){
+  // Cookie consent
+  var banner = document.getElementById('cookie-banner');
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){ banner.classList.add('visible'); }, 800);
+  }
+  window.acceptCookies = function(){
+    localStorage.setItem('cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+  };
+
   // Header scroll shadow
   var header = document.getElementById('site-header');
   var btt = document.getElementById('back-to-top');
