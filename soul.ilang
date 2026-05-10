@@ -76,6 +76,7 @@
   A:invent_review_quotes⇒forbidden
   A:add_JS_bundle_without_asking⇒block
   A:change_offer_html⇒forbidden|reason:owner_excluded
+  A:mention_competing_retailers⇒forbidden|Walmart+eBay+wavytalk.com|all_purchase_intent→Amazon_only
 
 # ─────────────────────────────────────────────────────────────
 # SEO & CONTENT RULES
@@ -166,6 +167,7 @@
   T:steam-straighteners.html=category_hub|steam_straightener_products+guides
   T:hair-dryers.html=category_hub|hair_dryer_products
   T:wavytalk-pro-steam-straightener-review.html=product_review|Wavytalk_Pro_Steam_Straightener|$67.17|4.5★
+  T:wavytalk-steam-straightener-4c-hair.html=hair_type_deep_dive|4C_hair|176_reviews|Article_schema
   T:wavytalk-ionic-hair-dryer-review.html=product_review|Wavytalk_Blown_Away_Hair_Dryer|$33.21|4.4★
   T:best-steam-straighteners-2026.html=top5_comparison|steam_straighteners
   T:steam-straightener-vs-flat-iron.html=comparison_article
@@ -191,7 +193,7 @@
 ::GENE{hierarchy|conf:confirmed|scope:project}
   T:level0=index.html
   T:level1=steam-straighteners.html|hair-dryers.html
-  T:level2_steam=wavytalk-pro-steam-straightener-review|best-steam-straighteners-2026|steam-straightener-vs-flat-iron|how-to-use-steam-straightener
+  T:level2_steam=wavytalk-pro-steam-straightener-review|wavytalk-steam-straightener-4c-hair|best-steam-straighteners-2026|steam-straightener-vs-flat-iron|how-to-use-steam-straightener
   T:level2_dryers=wavytalk-ionic-hair-dryer-review
   T:support=about|contact|privacy-policy|terms
   T:breadcrumb_rule=Home>Category>Page|every_link_real
