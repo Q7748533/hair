@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HairToolsReview | Independent Hair Tool Reviews, Comparisons &amp; Buying Guides</title>
+    <meta name="description" content="HairToolsReview helps you find the best hair styling tools with honest, data-backed reviews. Straighteners, steam brushes, dryers, curling irons — rated by 15,000+ verified buyers.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e8527a">
+    <link rel="canonical" href="https://hairtoolslab.com/">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="assets/styles.css">
+    <meta property="og:title" content="HairToolsReview | Independent Hair Tool Reviews &amp; Comparisons">
+    <meta property="og:description" content="Honest, data-backed reviews of the best hair styling tools. No sponsored content. 15,000+ verified reviews analyzed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hairtoolslab.com/">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "HairToolsReview",
+      "url": "https://hairtoolslab.com",
+      "description": "Independent reviews and comparisons of hair styling tools. Research-backed, transparent, and reader-supported.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HairToolsReview",
+        "url": "https://hairtoolslab.com",
+        "logo": "https://hairtoolslab.com/assets/favicon.svg"
+      }
+    }
+    </script>
+    <style>
+        /* Homepage-specific styles */
+        .home-hero {
+            background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin: 20px 0 32px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .home-hero h1 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .home-hero h1 span { color: #e8527a; }
+        .home-hero .tagline {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 28px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            font-size: 13px;
+            color: #777;
+        }
+        .trust-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .trust-bar .icon { font-size: 16px; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 24px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .product-card .badge {
+            display: inline-block;
+            background: #fff0e0;
+            color: #b85c00;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+        .product-card h3 {
+            font-size: 17px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .product-card h3 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        .product-card h3 a:hover { color: #e8527a; }
+        .product-card .rating {
+            color: #f5a623;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .product-card .rating .count {
+            color: #777;
+            font-size: 12px;
+        }
+        .product-card .desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .product-card .card-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e8527a;
+            text-decoration: none;
+        }
+        .product-card .card-link:hover { text-decoration: underline; }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+        .article-card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #f0f0f0;
+            transition: border-color 0.2s;
+        }
+        .article-card:hover { border-color: #e8527a; }
+        .article-card h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .article-card h4 a {
+            color: #333;
+            text-decoration: none;
+        }
+        .article-card h4 a:hover { color: #e8527a; }
+        .article-card p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .home-hero { padding: 40px 20px; }
+            .home-hero h1 { font-size: 24px; }
+            .trust-bar { gap: 12px; font-size: 12px; }
+        }
+        @media (max-width: 480px) {
+            .home-hero h1 { font-size: 22px; }
+            .home-hero .tagline { font-size: 15px; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header" id="site-header">
+    <div class="header-inner">
+        <div class="site-name"><a href="index.html">Hair<span>Tools</span>Review</a></div>
+        <nav class="header-nav" aria-label="Primary">
+            <a href="best-steam-straighteners-2026.html">Top 5</a>
+            <a href="how-to-use-steam-straightener.html">Guides</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="best-steam-straighteners-2026.html">Top 5 Steam Straighteners</a>
+    <a href="how-to-use-steam-straightener.html">How-to Guide</a>
+    <a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+<main>
+    <section class="home-hero">
+        <h1>Find the <span>Perfect Hair Tool</span> for Your Hair Type</h1>
+        <p class="tagline">Independent, research-backed reviews of straighteners, steam brushes, dryers, and curling irons. No sponsored content. Just honest data from 15,000+ verified buyer reviews.</p>
+        <a href="best-steam-straighteners-2026.html" class="cta-btn">Browse Top Picks &rarr;</a>
+        <div class="trust-bar">
+            <span><span class="icon">&#128202;</span> 15,000+ reviews analyzed</span>
+            <span><span class="icon">&#128683;</span> No sponsored reviews</span>
+            <span><span class="icon">&#9989;</span> Fact-checked &amp; updated monthly</span>
+            <span><span class="icon">&#128176;</span> Reader-supported</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Featured Product Reviews</h2>
+        <p class="muted" style="font-size:14px; margin-bottom:4px;">Our most in-depth reviews &mdash; tested, rated, and compared.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="badge">&#127942; #1 Best Seller</span>
+                <h3><a href="landing.html">Wavytalk Pro Steamline 3-in-1 Steam Straightener Brush</a></h3>
+                <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5/5 <span class="count">(4,277 reviews)</span></div>
+                <p class="desc">3-in-1 steam straightener, comb, and hydration system. 101% shinier hair with 62% less frizz. Under $50.</p>
+                <a href="landing.html" class="card-link">Read Full Review &rarr;</a>
+            </div>
+            <!-- TODO: Add more product cards as you review new products -->
+            <div class="product-card" style="border: 2px dashed #f0f0f0; background: #fafafa; justify-content: center; align-items: center; min-height: 200px;">
+                <p style="color:#999; font-size:14px; text-align:center;">More product reviews coming soon.<br><a href="contact.html" style="color:#e8527a;">Suggest a product &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Latest Articles &amp; Guides</h2>
+        <div class="articles-grid">
+            <div class="article-card">
+                <h4><a href="best-steam-straighteners-2026.html">5 Best Steam Straightener Brushes 2026</a></h4>
+                <p>Top 5 picks compared by performance, price, and hair type. Data from 15,000+ verified reviews.</p>
+            </div>
+            <div class="article-card">
+                <h4><a href="steam-straightener-vs-flat-iron.html">Steam Straightener vs Flat Iron: Which Is Better?</a></h4>
+                <p>Head-to-head comparison of heat damage, speed, results, and cost by hair type.</p>
+            </div>
+            <div class="article-card">
+                <h4><a href="how-to-use-steam-straightener.html">How to Use a Steam Straightener: Complete Guide</a></h4>
+                <p>Step-by-step instructions with temperature settings, technique tips, and maintenance advice.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="text-align:center;">
+        <h2>Why Trust HairToolsReview?</h2>
+        <div class="feature-grid">
+            <div class="feature-card feature-card--centered">
+                <div class="icon" aria-hidden="true">&#128269;</div>
+                <h3>Data-Driven Research</h3>
+                <p>We analyze thousands of verified reviews and manufacturer specs for every product we cover.</p>
+            </div>
+            <div class="feature-card feature-card--centered">
+                <div class="icon" aria-hidden="true">&#128683;</div>
+                <h3>No Sponsored Content</h3>
+                <p>We never accept payment for reviews. Every product is selected independently by our editorial team.</p>
+            </div>
+            <div class="feature-card feature-card--centered">
+                <div class="icon" aria-hidden="true">&#9878;</div>
+                <h3>Pros AND Cons</h3>
+                <p>No product is perfect. We always show the full picture so you can make an informed decision.</p>
+            </div>
+            <div class="feature-card feature-card--centered">
+                <div class="icon" aria-hidden="true">&#128260;</div>
+                <h3>Monthly Updates</h3>
+                <p>Reviews are revisited every month with latest pricing, new customer feedback, and product changes.</p>
+            </div>
+        </div>
+        <p style="margin-top:20px;"><a href="about.html" style="color:#e8527a; font-weight:600;">Learn more about our editorial process &rarr;</a></p>
+    </section>
+
+    <div class="disclosure">
+        <strong>Affiliate Disclosure:</strong> HairToolsReview participates in the Amazon Services LLC Associates Program. When you purchase through our links, we may earn a commission at no extra cost to you. This supports our independent review process. <a href="privacy-policy.html" class="anchor-link">Privacy Policy</a>
+    </div>
+</main>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <h4>HairToolsReview</h4>
+            <p>Independent reviews and comparisons of the latest hair styling tools. We help you find the right tool for your hair type and budget.</p>
+        </div>
+        <div>
+            <h4>Reviews</h4>
+            <p><a href="landing.html">Wavytalk Pro Steam Straightener</a></p>
+            <p><a href="best-steam-straighteners-2026.html">Top 5 Steam Straighteners</a></p>
+            <p><a href="steam-straightener-vs-flat-iron.html">Steam vs Flat Iron</a></p>
+            <p><a href="how-to-use-steam-straightener.html">How-to Guide</a></p>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <p><a href="about.html">About Us</a></p>
+            <p><a href="contact.html">Contact</a></p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+            <p><a href="terms.html">Terms of Service</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 HairToolsReview. All rights reserved. Operated by Palm Media Technology, United States.</span>
+        <span class="footer-legal">Not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers. All trademarks are property of their respective owners.</span>
+    </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies for analytics and affiliate tracking to improve your experience. By continuing to browse, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept All</button>
+    <button class="cookie-btn cookie-btn--outline" onclick="acceptCookies()">Essential Only</button>
+</div>
+
+<script>
+(function(){
+  // Cookie consent
+  var banner = document.getElementById('cookie-banner');
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){ banner.classList.add('visible'); }, 800);
+  }
+  window.acceptCookies = function(){
+    localStorage.setItem('cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+  };
+})();
+</script>
+
+</body>
+</html>
