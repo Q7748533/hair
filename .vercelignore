@@ -1,0 +1,6 @@
+# Internal AI / project docs — kept in git but not deployed to production
+.kiro-memory.md
+soul.ilang
+project-rules.md
+ilang-example.md
+data/

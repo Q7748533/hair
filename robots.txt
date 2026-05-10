@@ -1,9 +1,14 @@
 User-agent: *
 Allow: /
 
-# Block data/source files from indexing
+# Block data / source / internal docs from indexing
 Disallow: /offer.txt
 Disallow: /data/
 Disallow: /*.md$
+Disallow: /*.ilang$
+Disallow: /.kiro-memory.md
+Disallow: /soul.ilang
+Disallow: /project-rules.md
+Disallow: /ilang-example.md
 
 Sitemap: https://hairtoolslab.com/sitemap.xml

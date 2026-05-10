@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf2f5"/>
+      <stop offset="1" stop-color="#f8bbd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="#1a1a1a" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+    <text x="80" y="230" font-size="72" font-weight="700">Hair<tspan fill="#e8527a">Tools</tspan>Review</text>
+    <text x="80" y="310" font-size="36" fill="#444">Real reviews. Real opinions. No sponsors.</text>
+    <text x="80" y="380" font-size="28" fill="#666">Steam straighteners · Hair dryers · Styling tools</text>
+  </g>
+  <text x="80" y="560" font-size="22" fill="#c2185b" font-family="-apple-system, sans-serif" font-weight="600">hairtoolslab.com</text>
+</svg>

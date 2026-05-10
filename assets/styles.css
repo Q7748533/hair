@@ -1,7 +1,6 @@
 /* ============================================================
    HairToolsReview — Shared Stylesheet
-   Used by: landing.html, about.html, contact.html,
-            privacy-policy.html, terms.html
+   Used by all public pages under hairtoolslab.com
    ============================================================ */
 
 /* ---------- Reset & Base ---------- */
@@ -195,7 +194,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .section li { margin-bottom: 8px; }
 
-/* ---------- Hero (landing page) ---------- */
+/* ---------- Hero (product review pages) ---------- */
 .hero {
     background: #fff;
     border-radius: 12px;
@@ -225,7 +224,7 @@ img { max-width: 100%; height: auto; display: block; }
     box-sizing: border-box;
 }
 
-/* Improved placeholder with icon + text */
+/* Improved placeholder (currently unused; kept for future use) */
 .hero-image .img-placeholder {
     width: 100%;
     aspect-ratio: 1;
@@ -241,24 +240,6 @@ img { max-width: 100%; height: auto; display: block; }
     position: relative;
     overflow: hidden;
     border: 2px dashed rgba(173,20,87,0.2);
-}
-
-.hero-image .img-placeholder::before {
-    content: "\1F4F7";
-    font-size: 48px;
-    opacity: 0.6;
-}
-
-.hero-image .img-placeholder::after {
-    content: "Wavytalk Pro Steam Straightener";
-    position: absolute;
-    bottom: 20px;
-    font-size: 13px;
-    color: rgba(173,20,87,0.7);
-    font-weight: 500;
-    background: rgba(255,255,255,0.6);
-    padding: 4px 12px;
-    border-radius: 12px;
 }
 
 .hero-badge {
