@@ -3,7 +3,7 @@
 # Protocol: I-Lang v3.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-10
+# Updated: 2026-05-10 (+ cache-vs-code diagnostic gene)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=3.0]
@@ -224,3 +224,32 @@
   =>[READ:soul.ilang|READ:project-rules.md]
   =>[INIT|state=ready]
   =>[OUT|msg=none|silent=true]
+
+# ─────────────────────────────────────────────────────────────
+# DIAGNOSTICS — CACHE VS CODE
+# ─────────────────────────────────────────────────────────────
+
+::GENE{diagnostics|conf:confirmed|scope:global|added:2026-05-10}
+  T:on_report=CSS_or_asset_broken⇒do_not_modify_code_first
+  T:diagnostic_order=[ask_symptom, verify_code, verify_deploy, suspect_cache]
+  T:symptom_classes=[whole_page_unstyled, partial_misalign, only_owner_browser]
+  T:cache_config_known|vercel.json|/assets/*=max-age=31536000,immutable
+  T:immutable_cache+static_filename⇒known_trap|updates_invisible_to_returning_users
+  T:code_checks=[brace_balance, class_set_diff_HTML_vs_CSS, BOM_encoding, unclosed_comments]
+  T:deploy_checks=[curl_-I_returns_200, correct_Content-Type, Vercel_dashboard_shows_latest_sha]
+  T:owner_hardrefresh_fix⇒confirm_cache_root_cause|log_no_code_change
+  A:rewrite_CSS_before_diagnosis⇒forbidden
+  A:invent_bug_that_does_not_exist⇒forbidden
+  A:add_cache_busting_query_string_without_owner_consent⇒block
+
+# ─────────────────────────────────────────────────────────────
+# RESERVED FOR FUTURE: CACHE BUSTING (not active)
+# ─────────────────────────────────────────────────────────────
+
+::GENE{cache_strategy|conf:pending|scope:project|status:owner_not_opted_in}
+  T:current=immutable_1year|filename_fixed
+  T:option_A=version_query_string|href=styles.min.css?v=YYYYMMDD|bump_on_edit
+  T:option_B=content_hash_filename|styles.<hash>.min.css|requires_build_step
+  T:tradeoff=first_load_fastest_now|vs|update_visibility_for_returning_users
+  T:trigger_to_activate=owner_explicitly_requests_OR_repeated_cache_complaint
+  A:activate_without_owner_ask⇒forbidden
