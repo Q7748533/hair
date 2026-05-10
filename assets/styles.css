@@ -20,10 +20,11 @@ img { max-width: 100%; height: auto; display: block; }
 .top-bar {
     background: #fff3f6;
     padding: 10px 20px;
-    font-size: 12px;
+    font-size: 13px;
     color: #c2185b;
     text-align: center;
     border-bottom: 1px solid #fce4ec;
+    font-weight: 500;
 }
 
 /* ---------- Header / Nav ---------- */
@@ -34,6 +35,12 @@ img { max-width: 100%; height: auto; display: block; }
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: box-shadow 0.3s;
+}
+
+.header.scrolled {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-bottom-color: transparent;
 }
 
 .header-inner {
@@ -64,6 +71,49 @@ img { max-width: 100%; height: auto; display: block; }
 
 .header-nav a:hover,
 .header-nav a:focus { color: #e8527a; }
+
+/* Mobile hamburger menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.mobile-nav {
+    display: none;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 12px 20px 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.mobile-nav.open { display: block; }
+
+.mobile-nav a {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: color 0.2s;
+}
+
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: #e8527a; }
 
 /* ---------- Layout Container ---------- */
 .container {
@@ -127,14 +177,14 @@ img { max-width: 100%; height: auto; display: block; }
 
 .section .last-updated {
     font-size: 13px;
-    color: #777; /* was #999 — raised for WCAG AA contrast */
+    color: #777;
     margin-bottom: 28px;
 }
 
 .section p,
 .section li {
     font-size: 15px;
-    color: #444; /* was #555 — raised for better contrast */
+    color: #444;
     margin-bottom: 12px;
 }
 
@@ -173,27 +223,40 @@ img { max-width: 100%; height: auto; display: block; }
     background: linear-gradient(135deg, #fce4ec, #f8bbd0);
 }
 
-/* Fallback: image placeholder shown when no product photo is supplied */
+/* Improved placeholder with icon + text */
 .hero-image .img-placeholder {
     width: 100%;
     aspect-ratio: 1;
-    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
     border-radius: 16px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    gap: 12px;
+    font-size: 14px;
     color: #ad1457;
     position: relative;
     overflow: hidden;
+    border: 2px dashed rgba(173,20,87,0.2);
+}
+
+.hero-image .img-placeholder::before {
+    content: "\1F4F7";
+    font-size: 48px;
+    opacity: 0.6;
 }
 
 .hero-image .img-placeholder::after {
     content: "Wavytalk Pro Steam Straightener";
     position: absolute;
-    bottom: 16px;
-    font-size: 12px;
-    color: rgba(173,20,87,0.6);
+    bottom: 20px;
+    font-size: 13px;
+    color: rgba(173,20,87,0.7);
+    font-weight: 500;
+    background: rgba(255,255,255,0.6);
+    padding: 4px 12px;
+    border-radius: 12px;
 }
 
 .hero-badge {
@@ -247,25 +310,27 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 20px;
 }
 
-/* ---------- CTA Button ---------- */
+/* ---------- CTA Button (enhanced contrast) ---------- */
 .cta-btn {
     display: inline-block;
-    background: #e8527a;
+    background: #ff6f00;
     color: #fff;
     padding: 14px 32px;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 14px rgba(255,111,0,0.3);
 }
 
 .cta-btn:hover,
 .cta-btn:focus {
-    background: #d44068;
-    transform: translateY(-1px);
+    background: #e65100;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,111,0,0.4);
 }
 
 /* ---------- Feature Grid ---------- */
@@ -348,7 +413,18 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 22px;
     margin-bottom: 16px;
     border: 1px solid #f0f0f0;
+    transition: border-color 0.2s;
 }
+
+.review-card:hover { border-color: #e0e0e0; }
+
+/* Mixed/critical review distinction */
+.review-card--mixed {
+    background: #fffde7;
+    border-color: #fff9c4;
+}
+
+.review-card--mixed:hover { border-color: #fff176; }
 
 .review-header {
     display: flex;
@@ -394,12 +470,20 @@ img { max-width: 100%; height: auto; display: block; }
 .pros li::before { content: "\2713  "; color: #2e7d32; font-weight: 700; }
 .cons li::before { content: "\2717  "; color: #e65100; font-weight: 700; }
 
-/* ---------- Spec Table ---------- */
+/* ---------- Spec Table (with hover) ---------- */
 .spec-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 12px;
     font-size: 14px;
+}
+
+.spec-table tr {
+    transition: background 0.15s;
+}
+
+.spec-table tr:hover {
+    background: #fdf2f5;
 }
 
 .spec-table td {
@@ -412,6 +496,10 @@ img { max-width: 100%; height: auto; display: block; }
     color: #555;
     width: 35%;
     background: #fafafa;
+}
+
+.spec-table tr:hover td:first-child {
+    background: #fdf2f5;
 }
 
 .spec-table td:last-child { color: #333; }
@@ -435,24 +523,59 @@ img { max-width: 100%; height: auto; display: block; }
 
 .safety-box p { margin-bottom: 4px; }
 
-/* ---------- FAQ ---------- */
+/* ---------- FAQ (collapsible) ---------- */
 .faq-item {
     border-bottom: 1px solid #f0f0f0;
-    padding: 16px 0;
 }
 
 .faq-item:last-child { border-bottom: none; }
 
+.faq-item summary {
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: "+";
+    font-size: 20px;
+    font-weight: 300;
+    color: #999;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.faq-item[open] summary::after {
+    content: "\2212";
+    color: #e8527a;
+}
+
+.faq-answer {
+    padding: 0 0 16px;
+    font-size: 14px;
+    color: #444;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Legacy .faq-question for non-details pages */
 .faq-question {
     font-weight: 600;
     color: #333;
     font-size: 15px;
-}
-
-.faq-answer {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #444;
 }
 
 /* ---------- Mission Box (about page) ---------- */
@@ -651,10 +774,14 @@ img { max-width: 100%; height: auto; display: block; }
     color: #c2185b;
     font-size: 17px;
     padding: 16px 40px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
 .cta-section .cta-btn:hover,
-.cta-section .cta-btn:focus { background: #fce4ec; }
+.cta-section .cta-btn:focus {
+    background: #fce4ec;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 
 .cta-sub {
     font-size: 12px;
@@ -716,8 +843,44 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 16px 20px 0;
     border-top: 1px solid #333;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     color: #888;
+    line-height: 1.8;
+}
+
+.footer-legal { display: block; margin-top: 6px; }
+
+/* ---------- Back to Top ---------- */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #e8527a;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(232,82,122,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    background: #d44068;
 }
 
 /* ---------- Utilities ---------- */
@@ -734,6 +897,7 @@ img { max-width: 100%; height: auto; display: block; }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .pros-cons-grid { grid-template-columns: 1fr; }
     .header-nav { display: none; }
+    .mobile-menu-toggle { display: flex; }
     .section { padding: 24px 20px; }
     .hero { padding: 28px 20px; }
     .hero-image img,
@@ -743,6 +907,7 @@ img { max-width: 100%; height: auto; display: block; }
     .spec-table td:first-child { width: 45%; }
     .rating-bar { flex-direction: column; align-items: flex-start; gap: 4px; }
     .contact-grid { grid-template-columns: 1fr; }
+    .top-bar { font-size: 13px; padding: 10px 16px; }
 }
 
 /* ---------- Responsive: <= 480px ---------- */
@@ -766,4 +931,6 @@ img { max-width: 100%; height: auto; display: block; }
     .form-group textarea,
     .form-group select { font-size: 16px; }
     .submit-btn { width: 100%; padding: 16px; }
+    .top-bar { font-size: 12px; padding: 8px 12px; }
+    .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 18px; }
 }

@@ -69,7 +69,7 @@
     &#9889; Limited-Time Offer &middot; Free Shipping Available &middot; Check Latest Price on Amazon
 </div>
 
-<header class="header">
+<header class="header" id="site-header">
     <div class="header-inner">
         <div class="site-name"><a href="landing.html">Hair<span>Tools</span>Review</a></div>
         <nav class="header-nav" aria-label="Primary">
@@ -79,8 +79,19 @@
             <a href="#faq">FAQ</a>
             <a href="about.html">About</a>
         </nav>
+        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mobile-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false')">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#features">Features</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#specs">Specs</a>
+    <a href="#faq">FAQ</a>
+    <a href="about.html">About</a>
+    <a href="https://www.amazon.com/dp/B0DCK8P752" rel="nofollow sponsored noopener" target="_blank" style="color:#ff6f00;font-weight:600;">Check Price on Amazon &rarr;</a>
+</nav>
 
 <div class="container">
 
@@ -266,7 +277,7 @@
             <div class="review-helpful">Helpful</div>
         </div>
 
-        <div class="review-card">
+        <div class="review-card review-card--mixed">
             <div class="review-header">
                 <div>
                     <div class="reviewer-name">Bree</div>
@@ -334,30 +345,30 @@
 
     <section class="section" id="faq">
         <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <div class="faq-question">Q: Is the steam visible?</div>
+        <details class="faq-item">
+            <summary>Is the steam visible?</summary>
             <div class="faq-answer">The "Hydro-Infusion" system converts water into a fine nano-mist that is barely visible. You may not see much steam, but you can feel the difference &mdash; hair comes out softer, shinier, and with noticeably less frizz compared to dry heat straightening.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q: Can I use tap water?</div>
+        </details>
+        <details class="faq-item">
+            <summary>Can I use tap water?</summary>
             <div class="faq-answer">It is strongly recommended to use distilled or purified water. Tap water contains minerals that can clog the steam nozzles over time and reduce performance.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q: Does it work on very curly or 4C hair?</div>
+        </details>
+        <details class="faq-item">
+            <summary>Does it work on very curly or 4C hair?</summary>
             <div class="faq-answer">Yes! The Wavytalk Pro is especially suitable for people with curly, frizzy, coily, and thick/4C hair. For best results on very thick or coily hair, divide your hair into small sections and use the appropriate temperature setting.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q: Will it work in my country?</div>
+        </details>
+        <details class="faq-item">
+            <summary>Will it work in my country?</summary>
             <div class="faq-answer">The device supports universal voltage (100-240V), so it works worldwide. However, please note it comes with a US polarized plug &mdash; you may need a plug adapter for use in some countries.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q: How does it compare to a traditional flat iron?</div>
+        </details>
+        <details class="faq-item">
+            <summary>How does it compare to a traditional flat iron?</summary>
             <div class="faq-answer">According to manufacturer testing, the Steamline Pro delivers 101% shinier hair, 77% smoother, 62% less frizz, and 27% less breakage compared to traditional flat irons. It also saves time by combining brushing, hydration, and straightening in one step.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q: Is it safe for daily use?</div>
+        </details>
+        <details class="faq-item">
+            <summary>Is it safe for daily use?</summary>
             <div class="faq-answer">Even with steam technology, it is recommended to limit use to 2-3 times per week to allow time for natural hair repair. Always apply a thermal protection spray before styling.</div>
-        </div>
+        </details>
     </section>
 
     <section class="cta-section" id="cta">
@@ -398,9 +409,70 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2026 HairToolsReview. All rights reserved. | This site is not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers mentioned. All trademarks are property of their respective owners. | Product specifications, prices, and availability are subject to change without notice. Always verify on the retailer's website before purchasing.
+        <span>&copy; 2026 HairToolsReview. All rights reserved.</span>
+        <span class="footer-legal">Not affiliated with or endorsed by Amazon, Wavytalk, or any product manufacturers. All trademarks are property of their respective owners.</span>
+        <span class="footer-legal">Product specifications, prices, and availability subject to change. Always verify on the retailer's website.</span>
     </div>
 </footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<!-- Minimal JS: header shadow, back-to-top, stats animation, mobile menu close -->
+<script>
+(function(){
+  // Header scroll shadow
+  var header = document.getElementById('site-header');
+  var btt = document.getElementById('back-to-top');
+  var mobileNav = document.getElementById('mobile-nav');
+
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 10) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+    if(window.scrollY > 400) btt.classList.add('visible');
+    else btt.classList.remove('visible');
+  }, {passive:true});
+
+  // Back to top click
+  btt.addEventListener('click', function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // Mobile nav: close on link click
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
+  });
+
+  // Stats count-up animation
+  var animated = false;
+  var statsRow = document.querySelector('.stats-row');
+  if(statsRow){
+    var observer = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting && !animated){
+        animated = true;
+        statsRow.querySelectorAll('.stat-number').forEach(function(el){
+          var target = parseInt(el.textContent);
+          if(isNaN(target)) return;
+          var start = 0;
+          var duration = 1200;
+          var startTime = null;
+          function step(ts){
+            if(!startTime) startTime = ts;
+            var progress = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(start + (target - start) * eased) + '%';
+            if(progress < 1) requestAnimationFrame(step);
+          }
+          el.textContent = '0%';
+          requestAnimationFrame(step);
+        });
+        observer.disconnect();
+      }
+    }, {threshold:0.3});
+    observer.observe(statsRow);
+  }
+})();
+</script>
 
 </body>
 </html>
