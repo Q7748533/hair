@@ -134,5 +134,24 @@
     </div>
 </footer>
 
+<!-- Cookie Consent Banner -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies for analytics and affiliate tracking to improve your experience. By continuing to browse, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept All</button>
+    <button class="cookie-btn cookie-btn--outline" onclick="acceptCookies()">Essential Only</button>
+</div>
+<script>
+(function(){
+  var banner=document.getElementById('cookie-banner');
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){banner.classList.add('visible');},800);
+  }
+  window.acceptCookies=function(){
+    localStorage.setItem('cookie_consent','accepted');
+    banner.classList.remove('visible');
+  };
+})();
+</script>
+
 </body>
 </html>

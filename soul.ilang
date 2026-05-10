@@ -149,6 +149,7 @@
 # ─────────────────────────────────────────────────────────────
 
 ::GENE{file_map|conf:confirmed|scope:project}
+  T:index.html=brand_portal_homepage|products+articles+trust
   T:landing.html=main_review_page|product=Wavytalk_Pro_Steam_Straightener
   T:about.html=E-E-A-T_trust_page|editorial_process
   T:contact.html=form+email|mailto_fallback
