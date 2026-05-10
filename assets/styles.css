@@ -217,10 +217,12 @@ img { max-width: 100%; height: auto; display: block; }
     width: 100%;
     max-width: 420px;
     aspect-ratio: 1;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 16px;
     margin: 0 auto;
+    padding: 12px;
     background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    box-sizing: border-box;
 }
 
 /* Improved placeholder with icon + text */
