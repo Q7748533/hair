@@ -345,3 +345,20 @@
   A:Product_without_offers⇒block|Google_will_reject
   A:FAQPage_in_graph_with_WebSite⇒split_immediately
   A:publish_estimated_price_as_exact⇒mark_with_comment|update_when_real_data_available
+
+
+# ─────────────────────────────────────────────────────────────
+# PRODUCT PAGE PRICE DISPLAY
+# ─────────────────────────────────────────────────────────────
+
+::GENE{price_display|conf:confirmed|scope:project|added:2026-05-11}
+  T:location=hero_area|between:rating_bar_and_hero_summary
+  T:elements=[current_price,original_price_strikethrough,discount_badge,source_note]
+  T:current_price_style=28px|bold|brand_color_#e8527a
+  T:discount_badge_style=green_bg|green_text|rounded
+  T:source_note="Updated daily from Amazon"|12px|grey
+  T:data_attribute_required=data-price-{product}|same_as_price_system_markers
+  T:original_price=hardcoded|update_manually_if_RRP_changes
+  T:on_new_review_page⇒add_price_display_in_hero|same_pattern
+  A:price_display_without_data_attribute⇒forbidden|breaks_auto_update
+  A:fake_discount_percentage⇒forbidden|must_reflect_real_RRP
