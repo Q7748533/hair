@@ -120,8 +120,9 @@
 # ─────────────────────────────────────────────────────────────
 
 ::GENE{seo|conf:confirmed|scope:project}
-  T:title_format=[Product] Review [Year]: [Rating] ([Count] Reviews)
-  T:meta_desc_max=155chars|include:rating+benefit+CTA
+  -e T:title_pattern=keyword_front+brand_back|example:"Steam Straightener Review 2026 | HairToolsReview"
+  T:title_format_review=[Product] Review [Year]: [Rating] ([Count] Reviews)
+  T:meta_desc_max=150chars|contains:action_verb+benefit|no_filler
   T:H1=one_per_page|exact_match_primary_keyword
   T:H2=each_answerable_as_standalone_search_intent
   T:internal_links=contextual|min:2_per_page
@@ -131,11 +132,17 @@
   T:breadcrumb=real_links_only|each_level_has_page
   T:url_naming=keyword-rich|format=[brand]-[product]-[type].html
   T:cookie_consent=every_page|localStorage_based
-  T:og_tags=4_per_page|title+desc+type+url
+  T:og_tags=required:[og:title,og:description,og:image,og:url,og:type,og:site_name]
+  T:gsc_submit=within_24h_of_new_page|manual_index:homepage+category_hubs
+  T:llms_txt=root_dir|keep_updated_on_new_page|allow:Googlebot+GPTBot+ClaudeBot+PerplexityBot
+  T:hreflang=pending|activate_when:multilang_expansion
+  T:ads_txt=pending|activate_when:AdSense_approved|pattern:pub-XXX_never_ca-XXX
   A:keyword_stuff⇒forbidden
   A:duplicate_title_across_pages⇒fix_immediately
   A:fake_dateModified⇒forbidden|must:real_content_change
   A:fake_breadcrumb_links⇒forbidden|must_point_to_real_page
+  A:brand_before_keyword_in_title⇒swap_to_keyword_first
+  A:launch_page_without_gsc_submit⇒warn_within_24h
 
 # ─────────────────────────────────────────────────────────────
 # QUALITY ASSURANCE
