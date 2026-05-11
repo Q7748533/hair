@@ -260,3 +260,43 @@
   T:tradeoff=first_load_fastest_now|vs|update_visibility_for_returning_users
   T:trigger_to_activate=owner_explicitly_requests_OR_repeated_cache_complaint
   A:activate_without_owner_ask⇒forbidden
+
+
+
+# ─────────────────────────────────────────────────────────────
+# GEO — GENERATIVE ENGINE OPTIMIZATION (for AI search)
+# ─────────────────────────────────────────────────────────────
+
+::GENE{geo|conf:confirmed|scope:project|added:2026-05-11}
+  T:target_engines=[ChatGPT,Perplexity,Google_AI_Overview,Claude,Gemini]
+  T:citation_friendly=specific_numbers_not_vague_words
+  T:replace_phrase:thousands_of⇒use_actual_count
+  T:replace_phrase:many⇒use_actual_count
+  T:replace_phrase:lots_of⇒use_actual_count
+  T:h2_format=question_when_possible|match_user_query_intent
+  T:answer_first_structure|then_supporting_detail
+  T:brand_page_must_have=[Organization_schema,FAQPage_schema,min_2_question_H2,min_300_words]
+  T:Organization.required_fields=[@id,url,logo,parentOrganization,contactPoint]
+  T:FAQPage.min_3_QAs|answer_must_be_self_contained|ref_in_visible_section
+  T:visible_FAQ_mirrors_JSON-LD_FAQPage|one-to-one
+  T:testing_methodology_paragraph=cite_specific_sample_size|not_vague_scale
+  A:publish_homepage_without_Organization_schema⇒warn
+  A:vague_quantifier_in_methodology⇒replace_with_number
+  A:FAQPage_schema_without_visible_FAQ_mirror⇒warn|risk:spam_signal
+
+# ─────────────────────────────────────────────────────────────
+# SCHEMA COVERAGE REQUIREMENTS (per-page-type)
+# ─────────────────────────────────────────────────────────────
+
+::GENE{schema_coverage|conf:confirmed|scope:project|added:2026-05-11}
+  T:homepage⇒[WebSite,Organization,FAQPage]|@graph_wrapper
+  T:category_hub⇒[CollectionPage,ItemList,BreadcrumbList]
+  T:product_review⇒[Article,Product,AggregateRating,FAQPage,BreadcrumbList]
+  T:howto_article⇒[HowTo,BreadcrumbList]
+  T:comparison_article⇒[Article,BreadcrumbList]
+  T:about_page⇒[Organization]
+  T:legal_pages=no_schema_needed
+  T:404_page=no_schema_needed
+  T:offer_page=noindex|no_schema
+  T:when_adding_page⇒check_this_list_first
+  A:publish_new_page_without_appropriate_schema⇒block
