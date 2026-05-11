@@ -7,6 +7,7 @@
     <meta name="description" content="Learn how to use a hair dryer diffuser for defined, frizz-free curls. Step-by-step guide for 2a-4c hair types with heat settings, technique, and common mistakes to avoid.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e8527a">
+    <meta name="author" content="HairToolsReview">
     <link rel="canonical" href="https://hairtoolslab.com/how-to-use-a-diffuser">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
@@ -116,49 +117,7 @@
       ]
     }
     </script>
-<!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-  try {
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      });
-    }
-  } catch (e) {}
-  gtag('js', new Date());
-  gtag('config', 'G-HFT4XZ2YB2');
-  (function(){
-    var loaded = false;
-    function loadGA(){
-      if (loaded) return;
-      loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2';
-      document.head.appendChild(s);
-    }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadGA, {timeout: 4000});
-    } else {
-      setTimeout(loadGA, 3000);
-    }
-    ['scroll','click','keydown','touchstart','mousemove'].forEach(function(ev){
-      window.addEventListener(ev, loadGA, {once:true, passive:true});
-    });
-  })();
-</script>
+<script src="assets/site.min.js" defer></script>
 </head>
 <body>
 
@@ -263,6 +222,9 @@
 
         <h2>Heat &amp; Speed by Curl Type</h2>
         <table class="spec-table">
+            <thead>
+                <tr><th>Curl Type</th><th>Recommended Settings</th></tr>
+            </thead>
             <tbody>
                 <tr><td>2A&ndash;2B (loose waves)</td><td>LOW heat, LOW speed. 15&ndash;20 min. Shorter hold times (10&ndash;15 sec) to avoid flattening.</td></tr>
                 <tr><td>2C&ndash;3A (loose curls)</td><td>LOW heat, LOW speed. 15&ndash;20 min. Hold 20 sec per section.</td></tr>
@@ -391,53 +353,7 @@
 <!-- Back to top -->
 <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
 
-<script>
-(function(){
-  var banner = document.getElementById('cookie-banner');
-  var btt = document.getElementById('back-to-top');
-  var header = document.getElementById('site-header');
-  var mobileNav = document.getElementById('mobile-nav');
-  var stored = null;
-  try { stored = localStorage.getItem('cookie_consent'); } catch(e) {}
 
-  function setConsent(choice){
-    try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
-    if (typeof gtag === 'function') {
-      var granted = (choice === 'accepted');
-      gtag('consent', 'update', {
-        'ad_storage': granted ? 'granted' : 'denied',
-        'ad_user_data': granted ? 'granted' : 'denied',
-        'ad_personalization': granted ? 'granted' : 'denied',
-        'analytics_storage': granted ? 'granted' : 'denied'
-      });
-    }
-    if (banner) banner.classList.remove('visible');
-  }
-
-  if (banner && !stored) {
-    setTimeout(function(){ banner.classList.add('visible'); }, 800);
-  }
-
-  if (banner) {
-    banner.querySelectorAll('[data-consent]').forEach(function(btn){
-      btn.addEventListener('click', function(){ setConsent(btn.getAttribute('data-consent')); });
-    });
-  }
-
-  window.addEventListener('scroll', function(){
-    if (header) { if (window.scrollY > 10) header.classList.add('scrolled'); else header.classList.remove('scrolled'); }
-    if (btt) { if (window.scrollY > 400) btt.classList.add('visible'); else btt.classList.remove('visible'); }
-  }, {passive:true});
-
-  if (btt) btt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-
-  if (mobileNav) {
-    mobileNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
-    });
-  }
-})();
-</script>
 
 </body>
 </html>

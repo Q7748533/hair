@@ -1,0 +1,48 @@
+name: Build & Minify CSS
+
+on:
+  push:
+    paths:
+      - 'assets/styles.css'
+  workflow_dispatch:
+
+jobs:
+  minify-css:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install clean-css-cli
+        run: npm install -g clean-css-cli
+
+      - name: Minify CSS
+        run: cleancss -o assets/styles.min.css assets/styles.css
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet assets/styles.min.css; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No CSS changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff --stat assets/styles.min.css
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/styles.min.css
+          git commit -m "build: minify styles.css → styles.min.css"
+          git push

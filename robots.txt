@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Block data / source / internal docs from indexing
+Disallow: /offer
 Disallow: /offer.txt
 Disallow: /data/
 Disallow: /*.md$
