@@ -7,6 +7,7 @@
     <meta name="description" content="Contact HairToolsReview for product questions, review requests, corrections, or partnership inquiries. We respond within 24 hours. Real email and contact form.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e8527a">
+    <meta name="author" content="HairToolsReview">
     <link rel="canonical" href="https://hairtoolslab.com/contact">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
@@ -23,53 +24,7 @@
     <meta property="og:image:alt" content="Contact HairToolsReview">
     <meta name="twitter:image" content="https://hairtoolslab.com/assets/og-default.svg">
     <meta name="twitter:image:alt" content="Contact HairToolsReview">
-<!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // Default: deny tracking until the user consents (GDPR / ePrivacy compliant)
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-  // If the user already consented on a previous visit, grant immediately
-  try {
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      });
-    }
-  } catch (e) {}
-  gtag('js', new Date());
-  gtag('config', 'G-HFT4XZ2YB2');
-  // Defer the 70KB gtag.js library until the browser is idle OR the user
-  // actually does something. Saves TTI / initial bandwidth on the first load.
-  (function(){
-    var loaded = false;
-    function loadGA(){
-      if (loaded) return;
-      loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2';
-      document.head.appendChild(s);
-    }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadGA, {timeout: 4000});
-    } else {
-      setTimeout(loadGA, 3000);
-    }
-    ['scroll','click','keydown','touchstart','mousemove'].forEach(function(ev){
-      window.addEventListener(ev, loadGA, {once:true, passive:true});
-    });
-  })();
-</script>
+<script src="assets/site.min.js" defer></script>
 </head>
 <body>
 
@@ -233,121 +188,7 @@
 <!-- Back to top -->
 <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
 
-<script>
-(function(){
-  var banner = document.getElementById('cookie-banner');
-  var btt = document.getElementById('back-to-top');
-  var header = document.getElementById('site-header');
-  var mobileNav = document.getElementById('mobile-nav');
-  var stored = null;
-  try { stored = localStorage.getItem('cookie_consent'); } catch(e) {}
 
-  function setConsent(choice){
-    try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
-    if (typeof gtag === 'function') {
-      var granted = (choice === 'accepted');
-      gtag('consent', 'update', {
-        'ad_storage': granted ? 'granted' : 'denied',
-        'ad_user_data': granted ? 'granted' : 'denied',
-        'ad_personalization': granted ? 'granted' : 'denied',
-        'analytics_storage': granted ? 'granted' : 'denied'
-      });
-    }
-    if (banner) banner.classList.remove('visible');
-  }
-
-  if (banner && !stored) {
-    setTimeout(function(){ banner.classList.add('visible'); }, 800);
-  }
-
-  if (banner) {
-    banner.querySelectorAll('[data-consent]').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        setConsent(btn.getAttribute('data-consent'));
-      });
-    });
-  }
-
-  window.addEventListener('scroll', function(){
-    if (header) {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
-    if (btt) {
-      if (window.scrollY > 400) btt.classList.add('visible');
-      else btt.classList.remove('visible');
-    }
-  }, {passive:true});
-
-  if (btt) btt.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'});
-  });
-
-  if (mobileNav) {
-    mobileNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
-    });
-  }
-
-  // ----- Contact form: progressive enhancement -----
-  // If the form has a data-formspree-id attribute, submit asynchronously to Formspree.
-  // Otherwise, fall back to the native mailto: action.
-  var form = document.getElementById('contact-form');
-  if (form) {
-    var status = document.getElementById('contact-status');
-    var submitBtn = document.getElementById('contact-submit');
-    var formspreeId = form.getAttribute('data-formspree-id');
-
-    form.addEventListener('submit', function(e){
-      // If the honeypot field is filled, silently drop (treat as sent)
-      var honeypot = form.querySelector('input[name="_gotcha"]');
-      if (honeypot && honeypot.value) {
-        e.preventDefault();
-        status.textContent = 'Thanks — your message has been sent.';
-        status.style.color = '#2e7d32';
-        form.reset();
-        return;
-      }
-
-      if (!formspreeId) {
-        // No Formspree configured — let the browser handle mailto: natively.
-        return;
-      }
-
-      e.preventDefault();
-      status.textContent = 'Sending…';
-      status.style.color = '#555';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
-
-      var data = new FormData(form);
-      fetch('https://formspree.io/f/' + formspreeId, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: data
-      }).then(function(response){
-        if (response.ok) {
-          status.textContent = 'Thanks — your message has been sent. We usually reply within 24 hours.';
-          status.style.color = '#2e7d32';
-          form.reset();
-        } else {
-          return response.json().then(function(body){
-            var msg = (body && body.errors && body.errors.map(function(x){return x.message;}).join(', ')) || 'Something went wrong. Please email us directly at support@hairtoolslab.com.';
-            status.textContent = msg;
-            status.style.color = '#c62828';
-          });
-        }
-      }).catch(function(){
-        status.textContent = 'Network error. Please email us directly at support@hairtoolslab.com.';
-        status.style.color = '#c62828';
-      }).then(function(){
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-      });
-    });
-  }
-})();
-</script>
 
 </body>
 </html>
