@@ -71,28 +71,29 @@ def fetch_price(asin: str) -> dict:
 
 
 def update_price_in_file(filepath: str, marker: str, new_price: str):
-    """Update data-price-xxx="$XX.XX" attribute AND visible text in file."""
+    """Update data-price-xxx="$XX.XX" attribute, visible text, AND JSON-LD offers.price."""
     if not os.path.exists(filepath):
         return False
 
     content = open(filepath).read()
 
-    # Pattern: <span data-price-steam="$67.17">$67</span> or similar
-    # We update both the attribute value AND the visible text inside the span
-    pattern = rf'(<span {marker}=")[^"]*(">[^<]*</span>)'
-    replacement = rf'\g<1>${new_price}\g<2>'
-
-    # First update the attribute value
+    # 1. Update the data-price attribute value
     attr_pattern = f'{marker}="[^"]*"'
     attr_replacement = f'{marker}="${new_price}"'
-
     new_content = re.sub(attr_pattern, attr_replacement, content)
 
-    # Then update the visible price text inside the span
-    # Match: <span data-price-xxx="$XX.XX">ANY_PRICE_TEXT</span>
+    # 2. Update the visible price text inside the span
     span_pattern = rf'(<span {marker}="\$[\d.]+">)[^<]*(</span>)'
     span_replacement = rf'\g<1>${new_price}\g<2>'
     new_content = re.sub(span_pattern, span_replacement, new_content)
+
+    # 3. Update JSON-LD offers.price (pattern: "price": "XX.XX" inside Offer block)
+    # Only on review pages that have Product schema with offers
+    new_content = re.sub(
+        r'("@type":\s*"Offer"[^}]*"price":\s*")[^"]+(")',
+        rf'\g<1>{new_price}\g<2>',
+        new_content
+    )
 
     if new_content != content:
         open(filepath, 'w').write(new_content)
