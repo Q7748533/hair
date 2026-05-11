@@ -327,3 +327,21 @@
   A:expose_api_key_in_html_or_js⇒absolute_forbidden
   A:commit_if_price_unchanged⇒skip
   A:hardcode_price_without_marker⇒forbidden|must_use_data-price_span
+
+
+
+# ─────────────────────────────────────────────────────────────
+# GOOGLE RICH RESULTS COMPLIANCE
+# ─────────────────────────────────────────────────────────────
+
+::GENE{rich_results|conf:confirmed|scope:project|added:2026-05-11}
+  T:Product_requires=[offers|OR|review|OR|aggregateRating]|Google_2024_rule
+  T:Product_best_practice=offers+aggregateRating|both_together
+  T:Offer_required_fields=[price,priceCurrency,availability,url]
+  T:FAQPage_cannot_be_in_graph_with_WebSite|must:standalone_script_block
+  T:parent_node_error⇒split_unrelated_types_into_separate_script_blocks
+  T:ItemList_with_Products⇒each_Product_independently_valid
+  T:on_new_product_in_bestof⇒add_offers_with_price_even_if_estimated
+  A:Product_without_offers⇒block|Google_will_reject
+  A:FAQPage_in_graph_with_WebSite⇒split_immediately
+  A:publish_estimated_price_as_exact⇒mark_with_comment|update_when_real_data_available
