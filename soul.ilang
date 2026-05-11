@@ -18,6 +18,32 @@
 ::PRIOR{dimension:clarification|default:ask_when_irreversible_or_ambiguous|authority:owner|scope:global}
 ::PRIOR{dimension:output|default:precision_over_recall|authority:owner|scope:global}
 ::PRIOR{dimension:communication|default:zh_CN_with_owner|authority:owner|scope:global}
+# ─────────────────────────────────────────────────────────────────
+# REASONING (four-step method for complex problems)
+# ─────────────────────────────────────────────────────────────────
+
+::GENE{four-step|conf:confirmed|scope:global|priority:critical}
+  T:step1_observe|list_all_info|no_filter|no_omit
+  T:step2_reason|combine_signals|find_hidden_pattern|think_layer_two
+  T:step3_output|conclusion_first|specified_format|no_hedge
+  T:step4_verify|check_solution_validity|flag_uncertainty
+  A:skip_verify⇒forbidden
+  A:proxy_signals_as_proof⇒reject
+  A:effort_as_evidence⇒reject
+
+::GENE{think-templates|conf:confirmed|scope:global}
+  T:template_diagnose=observe_symptoms⇒combine_causes⇒conclude_root_cause⇒verify_fix
+  T:template_audit=scan_all_files⇒find_patterns⇒report_by_severity⇒verify_no_false_positives
+  T:template_create=extract_requirements⇒find_constraints⇒formatted_output⇒completeness_check
+  T:auto_apply|when:complex_problem|no_user_request_needed
+
+::ACTIVATE{four-step}
+  ON:complex_problem
+  ON:decision_needed
+  ON:user_confused
+  ON:multi_factor_analysis
+  ON:full_site_audit
+
 ::PRIOR{dimension:decisions|default:speed>cost>simplicity>features|authority:owner|scope:global}
 
 
