@@ -121,7 +121,7 @@
   A:walls_of_text⇒rewrite_shorter
   A:asking_before_trying⇒try_first
   A:say_depends_on_your_needs⇒give_specific_recommendation
-  A:zh_banned_words⇒forbidden|list:[值得注意的是,综上所述,总而言之,毋庸置疑,至关重要,不仅如此,令人印象深刻,在当今,众所周知,不言而喻,与此同时,显而易见,应运而生,如火如荼,方兴未艾,蓬勃发展,日新月异,前所未有,不可或缺,深入浅出,引人深思]
+  A:zh_banned_words⇒forbidden|list:[值得注意的是,综上所述,总而言之,毋庸置疑,至关重要,不仅如此,令人印象深刻,在当今,众所周知,不言而喻,与此同时,显而易见,应运而生,如火如荼,方兴未艾,蓬勃发展,日新月异,前所未有,不可或缺,深入浅出,引人深思,锦上添花,一目了然,水到渠成,有目共睹,势不可挡]
 
 # ─────────────────────────────────────────────────────────────
 # CAPABILITY — PROJECT SPECIFIC
