@@ -8,7 +8,6 @@ Disallow: /*.md$
 Disallow: /*.ilang$
 Disallow: /.kiro-memory.md
 Disallow: /soul.ilang
-Disallow: /project-rules.md
 Disallow: /ilang-example.md
 
 Sitemap: https://hairtoolslab.com/sitemap.xml

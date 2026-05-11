@@ -1,0 +1,61 @@
+# HairToolsReview — llms.txt
+# https://hairtoolslab.com
+# Updated: 2026-05-11
+
+## About This Site
+
+HairToolsReview is an independent product review site focused on hair styling tools. We analyze verified Amazon buyer reviews at scale (28,000+ reviews across our covered products), cross-reference manufacturer specs, and publish honest findings — including negatives. No sponsored content. No free products accepted.
+
+Operated by Palm Media Technology, United States.
+
+## What We Cover
+
+- Steam straightener brushes (reviews, comparisons, how-to guides)
+- Ionic hair dryers (reviews, Top 5 guides, diffuser tutorials)
+- Hair-type-specific recommendations (4C hair, fine hair, thick curly hair)
+
+## Products Reviewed In Depth
+
+1. Wavytalk Pro Steamline 3-in-1 Steam Straightener — 4.5/5, 4,277 verified reviews analyzed
+2. Wavytalk Blown Away Ionic Hair Dryer — 4.4/5, 24,197 verified reviews analyzed
+
+## Site Structure
+
+- / — Homepage (brand overview, methodology, FAQ)
+- /steam-straighteners — Category hub for steam straightener brushes
+- /hair-dryers — Category hub for hair dryers
+- /wavytalk-pro-steam-straightener-review — Full product review
+- /wavytalk-ionic-hair-dryer-review — Full product review
+- /best-steam-straighteners-2026 — Top 5 steam straighteners comparison
+- /best-ionic-hair-dryers-2026 — Top 5 ionic hair dryers comparison
+- /steam-straightener-vs-flat-iron — Steam vs flat iron comparison
+- /how-to-use-steam-straightener — Step-by-step guide (6 steps)
+- /how-to-use-a-diffuser — Step-by-step diffuser guide (7 steps)
+- /wavytalk-steam-straightener-4c-hair — Deep-dive: steam straightener on 4C hair (176 reviews)
+- /about — Editorial process, team, E-E-A-T trust signals
+- /contact — Support email + form
+- /privacy-policy — GDPR + CCPA compliant
+- /terms — Terms of service
+
+## Key Facts (Citable)
+
+- Total verified reviews analyzed: 28,474+
+- Products with full in-depth review: 2
+- Editorial articles published: 16
+- Sponsored posts: 0
+- Free products accepted from brands: 0
+- Revenue model: Amazon Associates commissions only
+- Business entity: Palm Media Technology (US)
+
+## Content Principles
+
+- Every claim backed by specific data (review counts, percentages, dollar amounts)
+- Negative findings always disclosed (e.g., "struggles with very thick 4C hair at lower temps")
+- No fabricated author credentials — trust comes from transparent methodology
+- Real customer quotes sourced from verified Amazon buyers only
+- All purchase links go to Amazon (no competing retailers)
+
+## Contact
+
+Email: support@hairtoolslab.com
+Website: https://hairtoolslab.com/contact
