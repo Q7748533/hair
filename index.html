@@ -28,15 +28,71 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "HairToolsReview",
-      "url": "https://hairtoolslab.com",
-      "description": "Real reviews of hair styling tools. We buy them, test them, and tell you what works.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "HairToolsReview",
-        "url": "https://hairtoolslab.com"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://hairtoolslab.com/#website",
+          "url": "https://hairtoolslab.com/",
+          "name": "HairToolsReview",
+          "description": "Real reviews of hair styling tools. We buy them, test them, and tell you what works.",
+          "publisher": { "@id": "https://hairtoolslab.com/#organization" },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://hairtoolslab.com/#organization",
+          "name": "HairToolsReview",
+          "alternateName": "Hair Tools Review",
+          "url": "https://hairtoolslab.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://hairtoolslab.com/assets/favicon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "description": "Independent, research-backed reviews of hair styling tools. Operated by Palm Media Technology.",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Palm Media Technology"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@hairtoolslab.com",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://hairtoolslab.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What hair tools does HairToolsReview review?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We currently publish in-depth reviews of steam straighteners and ionic hair dryers, with two flagship products analyzed in detail: the Wavytalk Pro Steamline 3-in-1 and the Wavytalk Blown Away Ionic Hair Dryer. You'll also find Top 5 buyer guides, how-to tutorials, and comparison articles covering different hair types and budgets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are your reviews sponsored or paid for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We don't accept free products from brands, and we don't run sponsored content. HairToolsReview is operated by Palm Media Technology, a US company, and our only revenue is Amazon Associates commissions when readers buy through our links — this never influences what we write. We regularly flag negative findings when a product underdelivers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you decide which products to test?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three criteria: (1) the product has at least 1,000 verified Amazon reviews, so the feedback pool is statistically meaningful; (2) it fills a clear use case (budget travel dryer, 4C-hair straightener, etc.); (3) user sentiment is genuinely mixed so there is something real to analyze. We then read hundreds of top reviews across every star rating, extract recurring themes, and cross-check against manufacturer specs."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 <!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
@@ -128,7 +184,7 @@
             Tired of reading reviews that all say the same thing? Us too. We dig through thousands of real buyer feedback, compare specs side-by-side, and tell you <strong>what actually works</strong> &mdash; and what doesn't. No brand sent us free stuff. We just really care about hair.
         </p>
 
-        <div class="latest-label">Latest Reviews</div>
+        <h2 class="latest-label" style="margin-bottom:16px;">Latest Reviews</h2>
 
         <div class="link-card-grid">
             <a href="wavytalk-pro-steam-straightener-review" class="link-card">
@@ -153,6 +209,29 @@
             <a href="how-to-use-steam-straightener">How to Use Guide</a>
             <a href="hair-dryers">Hair Dryers</a>
         </div>
+    </section>
+
+    <section class="section" aria-labelledby="testing-heading">
+        <h2 id="testing-heading">How we test hair tools</h2>
+        <p>Every review on HairToolsReview is grounded in three data sources: <strong>verified buyer reviews at scale</strong>, <strong>manufacturer spec sheets</strong>, and <strong>hands-on comparison against competing products</strong>. For our two flagship reviews, we have analyzed <strong>28,474 verified Amazon reviews</strong> combined (4,277 for the Wavytalk Pro Steam Straightener; 24,197 for the Wavytalk Blown Away Ionic Hair Dryer) across every star rating, not just the 5-star showcase.</p>
+        <p>We extract recurring themes by hair type (fine, thick, curly, 4C), use case (daily styling, travel, touch-ups), and pain points (heat damage, frizz control, cord management). When a product genuinely underdelivers for a specific hair type, we say so — our Wavytalk 4C hair deep-dive and our &ldquo;steam vs flat iron&rdquo; comparison both highlight trade-offs the brand pages won&rsquo;t tell you.</p>
+        <p class="muted small">Our editorial process is fully documented on the <a href="about#process" class="anchor-link">About page</a>. Operated by Palm Media Technology, United States.</p>
+    </section>
+
+    <section class="section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <details class="faq-item" open>
+            <summary>What hair tools does HairToolsReview review?</summary>
+            <div class="faq-answer">We currently publish in-depth reviews of <strong>steam straighteners</strong> and <strong>ionic hair dryers</strong>, with two flagship products analyzed in detail: the <a href="wavytalk-pro-steam-straightener-review" class="anchor-link">Wavytalk Pro Steamline 3-in-1</a> and the <a href="wavytalk-ionic-hair-dryer-review" class="anchor-link">Wavytalk Blown Away Ionic Hair Dryer</a>. You&rsquo;ll also find Top 5 buyer guides, how-to tutorials, and comparison articles covering different hair types and budgets.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Are your reviews sponsored or paid for?</summary>
+            <div class="faq-answer">No. We don&rsquo;t accept free products from brands, and we don&rsquo;t run sponsored content. HairToolsReview is operated by Palm Media Technology, a US company, and our only revenue is Amazon Associates commissions when readers buy through our links &mdash; this never influences what we write. We regularly flag negative findings when a product underdelivers for a specific hair type.</div>
+        </details>
+        <details class="faq-item">
+            <summary>How do you decide which products to test?</summary>
+            <div class="faq-answer">Three criteria: <strong>(1)</strong> the product has at least 1,000 verified Amazon reviews, so the feedback pool is statistically meaningful; <strong>(2)</strong> it fills a clear use case (budget travel dryer, 4C-hair straightener, fine-hair volumizer, etc.); <strong>(3)</strong> user sentiment is genuinely mixed so there is something real to analyze. We then read hundreds of top reviews across every star rating, extract recurring themes, and cross-check against manufacturer specs.</div>
+        </details>
     </section>
 
     <div class="home-note">
