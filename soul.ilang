@@ -204,6 +204,12 @@
   T:level2_dryers=wavytalk-ionic-hair-dryer-review
   T:support=about|contact|privacy-policy|terms
   T:breadcrumb_rule=Home>Category>Page|every_link_real
+  T:nav_balance=equal_representation_per_category|header+footer+quick_links
+  T:header_nav=hub_pages_only|no_individual_articles|max_4_items
+  T:footer_categories=min_2_links_per_category|hub+top_article
+  T:quick_links=balanced_across_categories|no_single_category_dominance
+  T:on_new_category⇒update_header+footer+quick_links+mobile_nav_in_one_sweep
+  A:nav_80_percent_one_category⇒rebalance_immediately
 
 # ─────────────────────────────────────────────────────────────
 # GOOGLE ADS COMPLIANCE
