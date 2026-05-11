@@ -1,0 +1,47 @@
+name: Update Product Prices
+
+on:
+  schedule:
+    # Run daily at 08:00 UTC (midnight PST / 16:00 Beijing)
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch and update prices
+        env:
+          RAINFOREST_API_KEY: ${{ secrets.RAINFOREST_API_KEY }}
+        run: python3 scripts/update-prices.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No price changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff --stat
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "price: update live Amazon prices ($(date -u +%Y-%m-%d))"
+          git push
