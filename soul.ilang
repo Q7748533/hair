@@ -306,3 +306,24 @@
   T:offer_page=noindex|no_schema
   T:when_adding_page⇒check_this_list_first
   A:publish_new_page_without_appropriate_schema⇒block
+
+
+
+# ─────────────────────────────────────────────────────────────
+# LIVE PRICE UPDATE SYSTEM
+# ─────────────────────────────────────────────────────────────
+
+::GENE{price_system|conf:confirmed|scope:project|added:2026-05-11}
+  T:method=github_actions_cron|schedule=daily_08UTC
+  T:api=Rainforest_API|endpoint=api.rainforestapi.com/request
+  T:api_key_storage=GitHub_Secrets|name=RAINFOREST_API_KEY|never_in_code
+  T:script=scripts/update-prices.py|lang=python3|stdlib_only
+  T:html_marker_pattern=<span data-price-{product}="$XX.XX">$XX.XX</span>
+  T:update_logic=replace_attribute_value+visible_text_inside_span
+  T:safety=skip_if_api_error|skip_if_empty_price|no_empty_commit
+  T:products=[B0DCK8P752=steam,B09CP8SSGP=dryer]
+  T:add_new_product⇒add_to_PRODUCTS_list+add_html_markers|no_workflow_change
+  T:rate_limit=2s_between_requests
+  A:expose_api_key_in_html_or_js⇒absolute_forbidden
+  A:commit_if_price_unchanged⇒skip
+  A:hardcode_price_without_marker⇒forbidden|must_use_data-price_span
