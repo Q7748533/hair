@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-12 (v4.1 rebrand + positioning + JS extraction + hub rewrite)
+# Updated: 2026-05-12 (v4.2 + 7 hair dryer SEO articles)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -235,7 +235,7 @@
   T:level0=index.html
   T:level1=steam-straighteners.html|hair-dryers.html
   T:level2_steam=wavytalk-pro-steam-straightener-review|wavytalk-steam-straightener-4c-hair|best-steam-straighteners-2026|steam-straightener-vs-flat-iron|how-to-use-steam-straightener
-  T:level2_dryers=wavytalk-ionic-hair-dryer-review|best-ionic-hair-dryers-2026|how-to-use-a-diffuser
+  T:level2_dryers=wavytalk-ionic-hair-dryer-review|best-ionic-hair-dryers-2026|how-to-use-a-diffuser|wavytalk-hair-dryer-for-thick-hair|wavytalk-hair-dryer-for-curly-hair|wavytalk-hair-dryer-for-4c-hair|wavytalk-hair-dryer-attachments|ionic-hair-dryer-vs-regular-hair-dryer|how-to-reduce-frizz-when-blow-drying|wavytalk-hair-dryer-not-for-thin-hair
   T:support=about|contact|privacy-policy|terms
   T:breadcrumb_rule=Home>Category>Page|every_link_real
   T:nav_balance=equal_representation_per_category
