@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-12 (v4.3 + 7 steam straightener SEO articles)
+# Updated: 2026-05-12 (v4.4 + routine guide + internal link system)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -236,6 +236,7 @@
   T:level1=steam-straighteners.html|hair-dryers.html
   T:level2_steam=wavytalk-pro-steam-straightener-review|wavytalk-steam-straightener-4c-hair|best-steam-straighteners-2026|steam-straightener-vs-flat-iron|how-to-use-steam-straightener|wavytalk-steam-straightener-for-thick-hair|wavytalk-steam-straightener-for-fine-hair|wavytalk-steam-straightener-for-frizzy-hair|how-to-use-wavytalk-steam-straightener|can-you-use-wavytalk-steam-straightener-on-wet-hair|does-wavytalk-steam-straightener-damage-hair|why-does-steam-straightener-pull-hair
   T:level2_dryers=wavytalk-ionic-hair-dryer-review|best-ionic-hair-dryers-2026|how-to-use-a-diffuser|wavytalk-hair-dryer-for-thick-hair|wavytalk-hair-dryer-for-curly-hair|wavytalk-hair-dryer-for-4c-hair|wavytalk-hair-dryer-attachments|ionic-hair-dryer-vs-regular-hair-dryer|how-to-reduce-frizz-when-blow-drying|wavytalk-hair-dryer-not-for-thin-hair
+  T:level2_cross=wavytalk-hair-dryer-and-steam-straightener-routine
   T:support=about|contact|privacy-policy|terms
   T:breadcrumb_rule=Home>Category>Page|every_link_real
   T:nav_balance=equal_representation_per_category
@@ -396,6 +397,21 @@
   T:ItemList_Products⇒each_independently_valid
   A:Product_without_offers⇒block
   A:FAQPage_in_graph_with_WebSite⇒split_immediately
+
+# ─────────────────────────────────────────────────────────────
+# INTERNAL LINK SYSTEM
+# ─────────────────────────────────────────────────────────────
+
+::GENE{internal_links|conf:confirmed|scope:project}
+  T:dryer_articles_bottom=standardized_Related_Wavytalk_Hair_Dryer_Guides|4_link_cards
+  T:steam_articles_bottom=standardized_Related_Wavytalk_Steam_Straightener_Guides|4_link_cards
+  T:cross_category_link=one_sentence_light_link|never:which_is_better|never:versus_framing
+  T:dryer_cross_text="If your hair is already dry and your main issue is frizz or puffiness, see our Wavytalk Pro Steam Straightener review."
+  T:steam_cross_text="If your main issue is drying wet hair after washing, see our Wavytalk Hair Dryer review."
+  T:routine_page=wavytalk-hair-dryer-and-steam-straightener-routine|linked_from:index+both_hubs
+  T:inject_script=scripts/inject-links.py|rerun_on:new_article
+  A:cross_category_comparison_framing⇒forbidden|never:"which is better"
+  A:new_article_without_related_block⇒inject_immediately
 
 # ─────────────────────────────────────────────────────────────
 # BOOT SEQUENCE
