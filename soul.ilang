@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-12 (v4.4 + routine guide + internal link system)
+# Updated: 2026-05-12 (v4.5 + tone fixes: no absolute claims, manufacturer data disclaimers)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -257,6 +257,9 @@
   T:no_misleading_content
   A:add_fake_urgency⇒forbidden
   A:hide_affiliate_relationship⇒forbidden
+  A:absolute_superlative_claims⇒forbidden|never:"best X on Amazon period"|use:"one of the strongest"
+  A:feature_for_feature_cross_category⇒forbidden|dryer≠multi-styler
+  A:manufacturer_stats_without_disclaimer⇒forbidden|must:add_neutralizing_sentence
 
 # ─────────────────────────────────────────────────────────────
 # ACTIVATIONS (v4.0: event-driven skill triggers)
