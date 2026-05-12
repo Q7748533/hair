@@ -1,10 +1,10 @@
-# HairToolsReview — llms.txt
+# HairToolsLab — llms.txt
 # https://hairtoolslab.com
 # Updated: 2026-05-11
 
 ## About This Site
 
-HairToolsReview is an independent product review site focused on hair styling tools. We analyze verified Amazon buyer reviews at scale (28,000+ reviews across our covered products), cross-reference manufacturer specs, and publish honest findings — including negatives. No sponsored content. No free products accepted.
+HairToolsLab is an independent product review site focused on hair styling tools. We analyze verified Amazon buyer reviews at scale (28,000+ reviews across our covered products), cross-reference manufacturer specs, and publish honest findings — including negatives. No sponsored content. No free products accepted.
 
 Operated by Palm Media Technology, United States.
 
