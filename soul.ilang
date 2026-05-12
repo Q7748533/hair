@@ -139,7 +139,8 @@
   A:fabricate_author_credentials⇒absolute_forbidden
   A:claim_hands_on_testing_without_evidence⇒forbidden
   A:claim_professional_credentials_unverifiable⇒forbidden|no:cosmetologist|no:dermatologist|no:stylist
-  A:invent_review_quotes⇒forbidden
+  A:verbatim_buyer_quotes⇒forbidden|use:pattern_summaries_instead
+  A:copy_full_amazon_review_text⇒forbidden|summarize_and_attribute_to_verified_buyers
   A:add_JS_bundle_without_asking⇒block
   A:change_offer_html⇒forbidden|reason:owner_excluded
   A:mention_competing_retailers⇒forbidden|Walmart+eBay+wavytalk.com|all_purchase_intent→Amazon_only
