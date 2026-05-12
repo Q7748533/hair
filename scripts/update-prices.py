@@ -45,7 +45,7 @@ def fetch_price(asin: str) -> dict:
     """Fetch product price from Rainforest API."""
     url = f"https://api.rainforestapi.com/request?api_key={API_KEY}&type=product&asin={asin}&amazon_domain=amazon.com"
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'HairToolsReview-PriceBot/1.0'})
+        req = urllib.request.Request(url, headers={'User-Agent': 'HairToolsLab-PriceBot/1.0'})
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read())
 
@@ -102,7 +102,7 @@ def update_price_in_file(filepath: str, marker: str, new_price: str):
 
 
 def main():
-    print(f"=== HairToolsReview Price Update ===")
+    print(f"=== HairToolsLab Price Update ===")
     print(f"Time: {time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())}")
     print()
 
