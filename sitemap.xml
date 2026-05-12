@@ -169,6 +169,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Review process -->
+  <url>
+    <loc>https://hairtoolslab.com/review-process</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Brand / contact -->
   <url>
     <loc>https://hairtoolslab.com/about</loc>
