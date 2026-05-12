@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-12 (v4.5 + tone fixes: no absolute claims, manufacturer data disclaimers)
+# Updated: 2026-05-12 (v4.6 + simplified mobile-nav to 6 items)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -240,9 +240,12 @@
   T:support=about|contact|privacy-policy|terms
   T:breadcrumb_rule=Home>Category>Page|every_link_real
   T:nav_balance=equal_representation_per_category
-  T:header_nav=hub_pages_only|max_4_items
+  T:header_nav=hub_pages_only|max_4_items|Home+HairDryer+SteamStraightener+About
+  T:mobile_nav=6_items_only|Home+HairDryer+SteamStraightener+RoutineGuide+About+Contact
+  T:mobile_nav_rule=no_article_links|no_top5|no_howto|only_hub_and_cross_category
   T:footer_categories=min_2_links_per_category
   A:nav_80_percent_one_category⇒rebalance_immediately
+  A:article_links_in_mobile_nav⇒forbidden|use_hub_related_guides_instead
 
 # ─────────────────────────────────────────────────────────────
 # GOOGLE ADS COMPLIANCE
