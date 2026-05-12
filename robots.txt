@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /offer
 
 # Block data / source / internal docs from indexing
 Disallow: /offer.txt

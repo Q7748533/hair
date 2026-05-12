@@ -7,6 +7,7 @@
     <meta name="description" content="Can the Wavytalk Steamline Pro actually straighten 4C hair? We analyzed 176 verified customer reviews to find out. Real results, timing, and honest pros/cons for textured hair.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#e8527a">
+    <meta name="author" content="HairToolsLab">
     <link rel="canonical" href="https://hairtoolslab.com/wavytalk-steam-straightener-4c-hair">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
@@ -74,49 +75,7 @@
       ]
     }
     </script>
-<!-- Google tag (gtag.js) with Consent Mode v2 + deferred library load -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
-  try {
-    if (localStorage.getItem('cookie_consent') === 'accepted') {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      });
-    }
-  } catch (e) {}
-  gtag('js', new Date());
-  gtag('config', 'G-HFT4XZ2YB2');
-  (function(){
-    var loaded = false;
-    function loadGA(){
-      if (loaded) return;
-      loaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HFT4XZ2YB2';
-      document.head.appendChild(s);
-    }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadGA, {timeout: 4000});
-    } else {
-      setTimeout(loadGA, 3000);
-    }
-    ['scroll','click','keydown','touchstart','mousemove'].forEach(function(ev){
-      window.addEventListener(ev, loadGA, {once:true, passive:true});
-    });
-  })();
-</script>
+<script src="assets/site.min.js" defer></script>
 </head>
 <body>
 
@@ -182,7 +141,6 @@
         <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases at no extra cost to you. This does not influence our editorial content. <a href="privacy-policy" class="anchor-link">Privacy Policy</a>.
     </div>
 
-
     <section class="section" id="tldr">
         <h2>The Bottom Line (TL;DR)</h2>
         <p>Based on 176 verified customer reviews across major retailers:</p>
@@ -211,6 +169,7 @@
         <h2>What 176 Real Buyers Say: The Data</h2>
         <p>We categorized every review by hair type mentioned and outcome. Here's what we found:</p>
         <table class="spec-table">
+            <thead><tr><th>Hair Type</th><th>Findings</th></tr></thead>
             <tbody>
                 <tr><td>4C / Coily Hair</td><td>~40 reviews. <strong>92% positive.</strong> "Salon-quality silk press at home." One pass. Blow-dry first for best results. Hold: 2-3 days.</td></tr>
                 <tr><td>3C-4A / Curly</td><td>~35 reviews. <strong>94% positive.</strong> "One pass and done." "Shiny and frizz-free." Multiple say it replaced their flat iron entirely.</td></tr>
@@ -309,6 +268,7 @@
         <h2>How Long Does It Actually Take on Thick/4C Hair?</h2>
         <p>One of the most consistent data points across all 176 reviews:</p>
         <table class="spec-table">
+            <thead><tr><th>Method</th><th>Time Required</th></tr></thead>
             <tbody>
                 <tr><td>Traditional flat iron (thick/4C)</td><td>1.5&ndash;3 hours</td></tr>
                 <tr><td><strong>Wavytalk Steamline Pro (thick/4C)</strong></td><td><strong>15&ndash;40 minutes</strong></td></tr>
@@ -383,6 +343,7 @@
         <h2>Steamline Pro vs Flat Iron on 4C Hair</h2>
         <p>The #1 comparison buyers make. Here's how they stack up based on real user feedback:</p>
         <table class="spec-table">
+            <thead><tr><th>Factor</th><th>Comparison</th></tr></thead>
             <tbody>
                 <tr><td>Straightening quality</td><td><strong>Tie.</strong> Both get 4C hair straight. Flat iron slightly sleeker at ends.</td></tr>
                 <tr><td>Speed</td><td><strong>Steamline wins.</strong> 15-40 min vs 1.5-3 hours.</td></tr>
@@ -455,7 +416,6 @@
 
 </div>
 
-
 <footer class="footer">
     <div class="footer-inner">
         <div>
@@ -497,64 +457,6 @@
 
 <!-- Back to top -->
 <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
-
-<script>
-(function(){
-  var banner = document.getElementById('cookie-banner');
-  var btt = document.getElementById('back-to-top');
-  var header = document.getElementById('site-header');
-  var mobileNav = document.getElementById('mobile-nav');
-  var stored = null;
-  try { stored = localStorage.getItem('cookie_consent'); } catch(e) {}
-
-  function setConsent(choice){
-    try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
-    if (typeof gtag === 'function') {
-      var granted = (choice === 'accepted');
-      gtag('consent', 'update', {
-        'ad_storage': granted ? 'granted' : 'denied',
-        'ad_user_data': granted ? 'granted' : 'denied',
-        'ad_personalization': granted ? 'granted' : 'denied',
-        'analytics_storage': granted ? 'granted' : 'denied'
-      });
-    }
-    if (banner) banner.classList.remove('visible');
-  }
-
-  if (banner && !stored) {
-    setTimeout(function(){ banner.classList.add('visible'); }, 800);
-  }
-
-  if (banner) {
-    banner.querySelectorAll('[data-consent]').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        setConsent(btn.getAttribute('data-consent'));
-      });
-    });
-  }
-
-  window.addEventListener('scroll', function(){
-    if (header) {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
-    if (btt) {
-      if (window.scrollY > 400) btt.classList.add('visible');
-      else btt.classList.remove('visible');
-    }
-  }, {passive:true});
-
-  if (btt) btt.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'});
-  });
-
-  if (mobileNav) {
-    mobileNav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ mobileNav.classList.remove('open'); });
-    });
-  }
-})();
-</script>
 
 </body>
 </html>
