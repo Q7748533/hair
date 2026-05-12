@@ -117,6 +117,50 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Steam straightener supporting articles -->
+  <url>
+    <loc>https://hairtoolslab.com/wavytalk-steam-straightener-for-thick-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/wavytalk-steam-straightener-for-fine-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/wavytalk-steam-straightener-for-frizzy-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/how-to-use-wavytalk-steam-straightener</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/can-you-use-wavytalk-steam-straightener-on-wet-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/does-wavytalk-steam-straightener-damage-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hairtoolslab.com/why-does-steam-straightener-pull-hair</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Brand / contact -->
   <url>
     <loc>https://hairtoolslab.com/about</loc>
