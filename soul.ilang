@@ -266,8 +266,10 @@
   A:absolute_superlative_claims⇒forbidden|never:"best X on Amazon period"|use:"one of the strongest"
   A:feature_for_feature_cross_category⇒forbidden|dryer≠multi-styler
   A:manufacturer_stats_without_disclaimer⇒forbidden|must:add_neutralizing_sentence
-  A:unverified_multiplier_claims⇒forbidden|never:"2x faster"|use:"noticeably faster"+cite_buyer_reports
+  A:unverified_multiplier_claims⇒forbidden|never:"2x faster"|never:"90% of what"|use:"noticeably faster"+cite_buyer_reports
   A:works_all_hair_types⇒forbidden|must:specify_best_types+add_caveats_for_others
+  A:inflated_review_count_as_own_analysis⇒forbidden|cite_product_review_counts_individually
+  A:top5_as_objective_best_overall⇒forbidden|position_as:"where_Wavytalk_fits"+per_hair_type
 
 # ─────────────────────────────────────────────────────────────
 # ACTIVATIONS (v4.0: event-driven skill triggers)
