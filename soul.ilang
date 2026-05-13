@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-12 (v4.6 + simplified mobile-nav to 6 items)
+# Updated: 2026-05-13 (v4.7 + sitemap audit fix + full site SEO audit)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -158,7 +158,7 @@
   T:internal_links=contextual|min:2_per_page
   T:canonical=suffix_less|matches:cleanUrls
   T:schema_author_type=Organization|name=HairToolsLab
-  T:sitemap=auto_update_on_new_page
+  T:sitemap=auto_update_on_new_page|verify:no_missing_urls|verify:no_future_dates|verify:all_html_files_accounted_for
   T:breadcrumb=real_links_only|each_level_has_page
   T:url_naming=keyword-rich|format=[brand]-[product]-[type].html
   T:cookie_consent=every_page|localStorage_based
@@ -173,6 +173,9 @@
   A:fake_breadcrumb_links⇒forbidden|must_point_to_real_page
   A:brand_before_keyword_in_title⇒swap_to_keyword_first
   A:launch_page_without_gsc_submit⇒warn_within_24h
+  A:images_without_lazy_loading⇒fix_immediately|below_fold_must_have_loading_lazy
+  A:missing_alt_text⇒fix_immediately
+  A:external_links_without_nofollow⇒fix_immediately|affiliate_links_must_have_nofollow_sponsored_noopener
 
 # ─────────────────────────────────────────────────────────────
 # QUALITY ASSURANCE
@@ -299,6 +302,11 @@
 
 ::ACTIVATE{price_update_verify}
   ON:price_workflow_completed
+
+::ACTIVATE{sitemap_audit}
+  ON:full_site_audit
+  ON:seo_review_requested
+  ON:new_page_batch_added
 
 # ─────────────────────────────────────────────────────────────
 # EXAMPLES (v4.0: behavioral examples for pattern matching)
