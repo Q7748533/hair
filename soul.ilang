@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-13 (v4.7 + sitemap audit fix + full site SEO audit)
+# Updated: 2026-05-13 (v4.8 + feature-card/grid audit fix batch)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -190,6 +190,9 @@
   T:no_AI_template_feel|write_like_human|avoid_marketing_jargon
   A:commit_broken_HTML⇒block
   A:leave_placeholder_links_in_production⇒warn
+  A:feature_card_without_feature_grid⇒fix_immediately|feature_card_must_be_direct_child_of_feature_grid
+  A:self_link_in_related_guides⇒fix_immediately|link_card_grid_must_not_contain_current_page_href
+  A:extra_closing_div_before_section⇒block|check_div_balance_at_section_boundaries
 
 # ─────────────────────────────────────────────────────────────
 # WORKFLOW
@@ -307,6 +310,11 @@
   ON:full_site_audit
   ON:seo_review_requested
   ON:new_page_batch_added
+
+::ACTIVATE{html_structure_check}
+  ON:after_batch_edit
+  ON:new_page_created
+  ON:visual_bug_reported|check:feature_card_in_grid,div_balance,self_referencing_links
 
 # ─────────────────────────────────────────────────────────────
 # EXAMPLES (v4.0: behavioral examples for pattern matching)
