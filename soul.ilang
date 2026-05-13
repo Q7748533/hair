@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-13 (v4.8 + feature-card/grid audit fix batch)
+# Updated: 2026-05-13 (v4.11 + Article/Product schema split fix)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -276,6 +276,13 @@
   A:works_all_hair_types⇒forbidden|must:specify_best_types+add_caveats_for_others
   A:inflated_review_count_as_own_analysis⇒forbidden|cite_product_review_counts_individually
   A:top5_as_objective_best_overall⇒forbidden|position_as:"where_Wavytalk_fits"+per_hair_type
+  A:competitor_fake_offers_in_schema⇒forbidden|competitor_products_in_ItemList_must_not_have_offers_block|only_Wavytalk_position_1_gets_offers
+  A:competitor_offers_url_search_page⇒forbidden|offer_url_must_point_to_product_page_not_amazon_search
+  A:competitor_offers_same_price⇒forbidden|each_offer_price_must_match_actual_product_price|no_cloned_price_values
+  A:product_schema_missing_description⇒warn|every_Product_must_have_description_field
+  A:offer_missing_return_policy⇒warn|every_wavytalk_offer_must_have_hasMerchantReturnPolicy
+  A:offer_missing_shipping_details⇒warn|every_wavytalk_offer_must_have_shippingDetails
+   A:product_nested_in_article_about⇒forbidden|product_must_be_standalone_json_ld_block|not_nested_under_Article_about
 
 # ─────────────────────────────────────────────────────────────
 # ACTIVATIONS (v4.0: event-driven skill triggers)
@@ -289,6 +296,7 @@
 ::ACTIVATE{schema_check}
   ON:new_page_created
   ON:json_ld_modified
+  ON:gsc_rich_result_error|check:competitor_offers_fake,price_mismatch,brand_valid
 
 ::ACTIVATE{nav_rebalance}
   ON:new_category_added
@@ -325,6 +333,7 @@
   steps:
     1. 创建 [brand]-[product]-review.html（复制现有评测页结构）
     2. 加 Product+Offer+AggregateRating+FAQPage+BreadcrumbList schema
+    2a. Product: must have description, aggregateRating, offers (with hasMerchantReturnPolicy+shippingDetails)
     3. 加 hero 价格显示（data-price-xxx marker）
     4. 更新对应 category hub 的 ItemList
     5. 更新 sitemap.xml + lastmod
