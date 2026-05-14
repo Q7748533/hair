@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-13 (v4.12 + twitter:title added to all content pages)
+# Updated: 2026-05-13 (v4.13 + Google Ads conversion tracking)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -68,6 +68,7 @@
 ::FACT{entity|value:Palm_Media_Technology|country:US}
 ::FACT{deploy|value:Vercel|branch:main|auto:true}
 ::FACT{ga4_id|value:G-HFT4XZ2YB2}
+::FACT{google_ads_id|value:AW-17887894630|conversion_label:-wehCN6_s_IbEOa7ztFC|conversion_page:wavytalk-pro-steam-straightener-review}
 ::FACT{product_1_asin|value:B0DCK8P752|name:Wavytalk_Pro_Steam_Straightener}
 ::FACT{product_2_asin|value:B09CP8SSGP|name:Wavytalk_Blown_Away_Ionic_Hair_Dryer}
 ::FACT{price_api|value:Rainforest_API|key_storage:GitHub_Secrets}
