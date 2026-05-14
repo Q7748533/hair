@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-13 (v4.13 + Google Ads conversion tracking)
+# Updated: 2026-05-14 (v4.14 + move hasMerchantReturnPolicy from offer to Product)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -282,7 +282,7 @@
   A:competitor_offers_url_search_page⇒forbidden|offer_url_must_point_to_product_page_not_amazon_search
   A:competitor_offers_same_price⇒forbidden|each_offer_price_must_match_actual_product_price|no_cloned_price_values
   A:product_schema_missing_description⇒warn|every_Product_must_have_description_field
-  A:offer_missing_return_policy⇒warn|every_wavytalk_offer_must_have_hasMerchantReturnPolicy
+  A:offer_missing_return_policy⇒warn|every_wavytalk_product_must_have_hasMerchantReturnPolicy|policy_at_Product_level_not_inside_offers
   A:offer_missing_shipping_details⇒warn|every_wavytalk_offer_must_have_shippingDetails
    A:product_nested_in_article_about⇒forbidden|product_must_be_standalone_json_ld_block|not_nested_under_Article_about
 
