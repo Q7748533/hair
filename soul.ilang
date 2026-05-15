@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-14 (v4.14 + move hasMerchantReturnPolicy from offer to Product)
+# Updated: 2026-05-14 (v4.15 + vercel.json redirects: www→non-www, .html→clean)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
