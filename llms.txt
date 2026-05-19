@@ -1,6 +1,6 @@
 # HairToolsLab — llms.txt
 # https://hairtoolslab.com
-# Updated: 2026-05-12
+# Updated: 2026-05-22
 
 ## About This Site
 
@@ -60,6 +60,9 @@ Operated by Palm Media Technology, United States.
 ### Cross-Category
 - /wavytalk-hair-dryer-and-steam-straightener-routine — Both tools in one routine
 
+### Tech Find (Standalone Landing Pages)
+- /bfadeha-wallet-tracker-card — BFADEHA MFi Wallet Tracker Card for Apple Find My
+
 ### Trust & Process
 - /review-process — Full review methodology (7 sections)
 - /about — Editorial process, team, E-E-A-T trust signals
@@ -71,7 +74,7 @@ Operated by Palm Media Technology, United States.
 
 - Total verified reviews analyzed: 28,474+
 - Products with full in-depth review: 2
-- Total public pages: 31
+- Total public pages: 32
 - Editorial articles published: 25
 - Sponsored posts: 0
 - Free products accepted from brands: 0
