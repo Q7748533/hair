@@ -30,22 +30,6 @@
   "rewrites": [],
   "redirects": [
     {
-      "source": "/",
-      "has": [
-        { "type": "host", "value": "www.hairtoolslab.com" }
-      ],
-      "destination": "https://hairtoolslab.com/",
-      "statusCode": 301
-    },
-    {
-      "source": "/(.+)",
-      "has": [
-        { "type": "host", "value": "www.hairtoolslab.com" }
-      ],
-      "destination": "https://hairtoolslab.com/$1",
-      "statusCode": 301
-    },
-    {
       "source": "/landing",
       "destination": "/wavytalk-pro-steam-straightener-review",
       "statusCode": 301
