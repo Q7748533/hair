@@ -1,5 +1,5 @@
 # HairToolsLab — llms.txt
-# https://hairtoolslab.com
+# https://www.hairtoolslab.com
 # Updated: 2026-05-22
 
 ## About This Site
@@ -95,4 +95,4 @@ Operated by Palm Media Technology, United States.
 ## Contact
 
 Email: support@hairtoolslab.com
-Website: https://hairtoolslab.com/contact
+Website: https://www.hairtoolslab.com/contact

@@ -10,4 +10,4 @@ Disallow: /.kiro-memory.md
 Disallow: /soul.ilang
 Disallow: /ilang-example.md
 
-Sitemap: https://hairtoolslab.com/sitemap.xml
+Sitemap: https://www.hairtoolslab.com/sitemap.xml
