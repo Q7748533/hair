@@ -3,7 +3,7 @@
 # Protocol: I-Lang v4.0 | https://ilang.ai
 # Purpose: Define behavioral DNA for AI assistants working
 #          on this project. Portable across models.
-# Updated: 2026-05-22 (v4.16 + standalone product LP for Google Ads: BFADEHA wallet tracker)
+# Updated: 2026-10-05 (v4.17 + www canonical domain migration site-wide, PartnerWhiz verify on homepage)
 # ============================================================
 
 [PROTOCOL:I-Lang|v=4.0|conformance=L1-advisory]
@@ -62,7 +62,8 @@
 # FACTS (v4.0: immutable project constants)
 # ─────────────────────────────────────────────────────────────
 
-::FACT{domain|value:hairtoolslab.com}
+::FACT{domain|value:www.hairtoolslab.com|canonical:true|redirect:non-www_307_to_www_via_vercel_dashboard}
+::FACT{partnerwhiz_verify|value:pw_0a32581ba23adfd5a9b341c7fe1ddf0bb65378dc5296739c|page:index}
 ::FACT{brand|value:HairToolsLab}
 ::FACT{positioning|value:Independent_Wavytalk_hair_dryer_and_steam_straightener_reviews}
 ::FACT{entity|value:Palm_Media_Technology|country:US}
@@ -207,6 +208,8 @@
   T:review_all_files_before_commit
   T:one_feature_at_a_time|sequential
   T:verify_deploy_after_push|check:vercel_auto_deploy
+  T:fetch_rebase_before_push|reason:price_bot_commits_land_on_remote
+  A:host_redirect_in_vercel_json⇒forbidden|reason:vercel_dashboard_owns_domain_redirects|json_rules_loop_with_dashboard
   T:active_branches=main_only|policy:single_trunk
   when:orphan_commit_discovered ⇒ ::ACTIVATE{rescue_commit}
   when:stale_branch_found ⇒ ::ACTIVATE{branch_cleanup}
